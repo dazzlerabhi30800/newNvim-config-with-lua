@@ -51,7 +51,7 @@ Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' "Nerd Tree
 Plug 'https://github.com/preservim/nerdcommenter' "nerd commenter
 Plug 'https://github.com/preservim/nerdtree'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
@@ -92,13 +92,21 @@ set encoding=UTF-8
 call plug#end()
 
 
-colorscheme shades_of_purple 
+"requirement for the lua 
+lua require('init')
+
+
+
+
+
+colorscheme flattened_dark 
 set termguicolors
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_conceal_guifg = '#777777'
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 let macvim_skip_colorscheme=1
+highlight LineNr guibg=NONE
 "making background Transparent
 " au ColorScheme * hi Normal ctermbg=none guibg=none
 " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
@@ -134,10 +142,10 @@ function! SyncTree()
 endfunction
 
 " airline symbols
-let g:shades_of_purple_airline = 1
-let g:airline_theme='shades_of_purple'
-let g:shades_of_purple_lightline = 1
-let g:lightline = { 'colorscheme': 'shades_of_purple' }
+" let g:shades_of_purple_airline = 1
+let g:airline_theme='gotham'
+" let g:shades_of_purple_lightline = 1
+let g:lightline = { 'colorscheme': 'gotham' }
 let g:airline_powerline_fonts = 1
 
 
@@ -194,13 +202,13 @@ let g:scrollview_column = 105
 
 
 "coc config"
-let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-tsserver',
-  \ 'coc-eslint', 
-  \ 'coc-json', 
-  \ ]
+" let g:coc_global_extensions = [
+"   \ 'coc-snippets',
+"   \ 'coc-pairs',
+"   \ 'coc-tsserver',
+"   \ 'coc-eslint', 
+"   \ 'coc-json', 
+"   \ ]
 
 
 " if hidden is not set, TextEdit might fail.
@@ -282,10 +290,10 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <Tab>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
+" inoremap <silent><expr> <Tab>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
 
 "indent guides configuration
 let g:indentguides_ignorelist = ['text']
@@ -362,10 +370,10 @@ syntax enable
 "coc nvim settings
 " let b:coc_diagnostic_disable = 1
 " Attempt to disable and hide Coc diagnostics
-let b:coc_diagnostic_disable=1
-let b:coc_diagnostic_info={'information': 0, 'hint': 0, 'lnums': [0, 0, 0, 0], 'warning': 0, 'error': 0}
+" let b:coc_diagnostic_disable=1
+" let b:coc_diagnostic_info={'information': 0, 'hint': 0, 'lnums': [0, 0, 0, 0], 'warning': 0, 'error': 0}
 " stop CoC by default (but Coc is enabled)
-let g:coc_start_at_startup=0
+" let g:coc_start_at_startup=0
 " manually start CoC
 nmap <leader>cc :<C-u>CocStart<CR>
 " manually stop CoC
