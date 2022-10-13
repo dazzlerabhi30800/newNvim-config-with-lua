@@ -1,0 +1,12 @@
+{
+  "html-css-support.enabledLanguages": [
+    "html",
+    "vue",
+    "blade",
+    "htmldjango",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.virtualText": true
+}
