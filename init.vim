@@ -35,13 +35,9 @@ vnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>
 call plug#begin('C:/Users/abhis/AppData/Local/nvim/plugged')
 Plug 'https://github.com/ryanoasis/vim-devicons' "devIcons
 Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/morhetz/gruvbox'  "Gruvbox theme
-Plug 'drewtempelmeyer/palenight.vim' "Palenight theme
-Plug 'artanikin/vim-synthwave84'
+" Plug 'https://github.com/morhetz/gruvbox'  "Gruvbox theme
 
-Plug 'Rigellute/shades-of-purple.vim'
 
-Plug 'AhmedAbdulrahman/vim-aylin' 
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/christoomey/vim-tmux-navigator' "tmux navigator
@@ -50,19 +46,19 @@ Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' "Nerd tree syn
 Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' "Nerd Tree
 Plug 'https://github.com/preservim/nerdcommenter' "nerd commenter
 Plug 'https://github.com/preservim/nerdtree'
-
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
-Plug 'https://github.com/mattn/emmet-vim' "emmet plugin
+" Plug 'https://github.com/mattn/emmet-vim' "emmet plugin
 
 Plug 'tpope/vim-commentary' "another commenter for comment toggler
 
 
 
 "for pairs
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 " Language Syntax Support
 Plug 'yuezk/vim-js'
@@ -120,7 +116,7 @@ let g:user_emmet_leader_key='<Tab>'
 
 "Setting up nerd Tree
 inoremap jk <ESC>
-nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-y> :NERDTreeToggle<CR>
 vmap gcc <plug>NERDCommenterToggle
 nmap gcc <plug>NERDCommenterToggle
 let g:NERDTreeDirArrowExpandable="+"
