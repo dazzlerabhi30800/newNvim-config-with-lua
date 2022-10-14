@@ -124,6 +124,21 @@ _G.packer_plugins = {
     path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neosolarized.nvim",
     url = "https://github.com/svrana/neosolarized.nvim"
   },
+  nerdcommenter = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
+  },
+  nerdtree = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree",
+    url = "https://github.com/preservim/nerdtree"
+  },
+  ["nerdtree-git-plugin"] = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree-git-plugin",
+    url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
@@ -153,6 +168,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-nerdtree-syntax-highlight"] = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-nerdtree-syntax-highlight",
+    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
   }
 }
 

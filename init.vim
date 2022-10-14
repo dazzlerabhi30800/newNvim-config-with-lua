@@ -42,10 +42,10 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/christoomey/vim-tmux-navigator' "tmux navigator
 Plug 'dstein64/nvim-scrollview'
-Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' "Nerd tree syntax highlight
-Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' "Nerd Tree
-Plug 'https://github.com/preservim/nerdcommenter' "nerd commenter
-Plug 'https://github.com/preservim/nerdtree'
+" Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' "Nerd tree syntax highlight
+" Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' "Nerd Tree
+" Plug 'https://github.com/preservim/nerdcommenter' "nerd commenter
+" Plug 'https://github.com/preservim/nerdtree'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
@@ -53,7 +53,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 
 " Plug 'https://github.com/mattn/emmet-vim' "emmet plugin
 
-Plug 'tpope/vim-commentary' "another commenter for comment toggler
+" Plug 'tpope/vim-commentary' "another commenter for comment toggler
 
 
 

@@ -38,7 +38,12 @@ return require('packer').startup(function(use)
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
+use 'tiagofumo/vim-nerdtree-syntax-highlight' --Nerd tree syntax highlight
+use 'Xuyuanp/nerdtree-git-plugin' --Nerd Tree
+use 'preservim/nerdcommenter' --nerd commenter
+use 'preservim/nerdtree'
 
+use 'tpope/vim-commentary' --another commenter for comment toggler
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
