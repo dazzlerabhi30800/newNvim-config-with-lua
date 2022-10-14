@@ -74,10 +74,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  LuaSnip = {
+  ["auto-pairs"] = {
     loaded = true,
-    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -99,10 +99,30 @@ _G.packer_plugins = {
     path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["colorbuddy.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\colorbuddy.nvim",
+    url = "https://github.com/tjdevries/colorbuddy.nvim"
+  },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["neosolarized.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\abhis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neosolarized.nvim",
+    url = "https://github.com/svrana/neosolarized.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,

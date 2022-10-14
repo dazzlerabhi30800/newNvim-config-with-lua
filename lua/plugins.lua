@@ -13,6 +13,10 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  use {
+    'svrana/neosolarized.nvim',
+    requires = { 'tjdevries/colorbuddy.nvim' }
+  }
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
@@ -25,6 +29,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'mattn/emmet-vim'
   use 'jiangmiao/auto-pairs'
+  use 'nvim-lualine/lualine.nvim' -- StatusLine
 
 
   -- Automatically set up your configuration after cloning packer.nvim

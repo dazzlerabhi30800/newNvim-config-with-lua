@@ -38,7 +38,7 @@ Plug 'https://github.com/vim-airline/vim-airline'
 " Plug 'https://github.com/morhetz/gruvbox'  "Gruvbox theme
 
 
-Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
+" Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/christoomey/vim-tmux-navigator' "tmux navigator
 Plug 'dstein64/nvim-scrollview'
@@ -95,11 +95,11 @@ lua require('init')
 
 
 
-colorscheme flattened_dark 
+" colorscheme flattened_dark 
 set termguicolors
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_conceal_guifg = '#777777'
-hi! Normal ctermbg=NONE guibg=NONE 
+" hi! Normal ctermbg=NONE guibg=#000
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 let macvim_skip_colorscheme=1
 highlight LineNr guibg=NONE
@@ -139,10 +139,10 @@ endfunction
 
 " airline symbols
 " let g:shades_of_purple_airline = 1
-let g:airline_theme='gotham'
+" let g:airline_theme='gotham'
 " let g:shades_of_purple_lightline = 1
-let g:lightline = { 'colorscheme': 'gotham' }
-let g:airline_powerline_fonts = 1
+" let g:lightline = { 'colorscheme': 'gotham' }
+" let g:airline_powerline_fonts = 1
 
 
 
