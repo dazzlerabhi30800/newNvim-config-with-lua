@@ -27,8 +27,12 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  -- use 'L3MON4D3/LuaSnip'
+  use 'glepnir/lspsaga.nvim'
   use 'mattn/emmet-vim'
-  use 'jiangmiao/auto-pairs'
+  -- use 'jiangmiao/auto-pairs'
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
   use 'nvim-lualine/lualine.nvim' -- StatusLine
   use 'norcalli/nvim-colorizer.lua'
 
@@ -38,12 +42,30 @@ return require('packer').startup(function(use)
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
-use 'tiagofumo/vim-nerdtree-syntax-highlight' --Nerd tree syntax highlight
-use 'Xuyuanp/nerdtree-git-plugin' --Nerd Tree
-use 'preservim/nerdcommenter' --nerd commenter
-use 'preservim/nerdtree'
+   use 'nvim-telescope/telescope-file-browser.nvim'
+  -- use 'tiagofumo/vim-nerdtree-syntax-highlight' --Nerd tree syntax highlight
+  -- use 'Xuyuanp/nerdtree-git-plugin' --Nerd Tree
+  use 'preservim/nerdcommenter' --nerd commenter
+  -- use 'preservim/nerdtree'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+     run = ':TSUpdate'
+  }
 
-use 'tpope/vim-commentary' --another commenter for comment toggler
+  use 'tpope/vim-commentary' --another commenter for comment toggler
+
+  -- Mason plugin for more language servers
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
+
+  --Plugins for tab
+  use 'kyazdani42/nvim-web-devicons'
+  use 'romgrk/barbar.nvim'
+
+  use 'jose-elias-alvarez/null-ls.nvim'
+
+  use('MunifTanjim/prettier.nvim') --Prettier plugin for Neovim's built in 
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

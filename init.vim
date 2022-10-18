@@ -16,10 +16,6 @@
 
 
 
-"noremap <C-ScrollWheelUp> :call AdjustFontSize(1)<CR>
-"noremap <C-ScrollWheelDown> :call AdjustFontSize(-1)<CR>
-"inoremap <C-ScrollWheelUp> <Esc>:call AdjustFontSize(1)<CR>a
-"inoremap <C-ScrollWheelDown> <Esc>:call AdjustFontSize(-1)<CR>a
 
 nnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>
 inoremap <silent><RightMouse> <Esc>:call GuiShowContextMenu()<CR>
@@ -34,54 +30,43 @@ vnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>
 
 call plug#begin('C:/Users/abhis/AppData/Local/nvim/plugged')
 Plug 'https://github.com/ryanoasis/vim-devicons' "devIcons
-Plug 'https://github.com/vim-airline/vim-airline'
-" Plug 'https://github.com/morhetz/gruvbox'  "Gruvbox theme
+" Plug 'https://github.com/vim-airline/vim-airline'
 
 
-" Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/christoomey/vim-tmux-navigator' "tmux navigator
 Plug 'dstein64/nvim-scrollview'
-" Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' "Nerd tree syntax highlight
-" Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' "Nerd Tree
-" Plug 'https://github.com/preservim/nerdcommenter' "nerd commenter
-" Plug 'https://github.com/preservim/nerdtree'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-
-" Plug 'https://github.com/mattn/emmet-vim' "emmet plugin
-
-" Plug 'tpope/vim-commentary' "another commenter for comment toggler
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 
 
-"for pairs
-" Plug 'jiangmiao/auto-pairs'
+
+
 
 " Language Syntax Support
 Plug 'yuezk/vim-js'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql' "graphql syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/vim-jsx-improve'
-Plug 'mxw/vim-jsx' "for jsx
-Plug 'suy/vim-context-commentstring' "important for surround
-Plug 'tpope/vim-surround' "for creating surround tags
-Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'mxw/vim-jsx' "for jsx
+" Plug 'suy/vim-context-commentstring' "important for surround
+" Plug 'tpope/vim-surround' "for creating surround tags
+" Plug 'maxmellon/vim-jsx-pretty'
+
+
 
 
 
 
 
 "Plugin for tabs 
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
+" Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'romgrk/barbar.nvim'
 
 
-"file finder plugin
-" Plug 'ctrlpvim/ctrlp.vim'
 
 set encoding=UTF-8
 
@@ -116,7 +101,7 @@ let g:user_emmet_leader_key='<Tab>'
 
 "Setting up nerd Tree
 inoremap jk <ESC>
-nmap <C-y> :NERDTreeToggle<CR>
+" nmap <C-y> :NERDTreeToggle<CR>
 vmap gcc <plug>NERDCommenterToggle
 nmap gcc <plug>NERDCommenterToggle
 let g:NERDTreeDirArrowExpandable="+"
@@ -143,6 +128,7 @@ endfunction
 " let g:shades_of_purple_lightline = 1
 " let g:lightline = { 'colorscheme': 'gotham' }
 " let g:airline_powerline_fonts = 1
+
 
 
 
@@ -373,3 +359,4 @@ syntax enable
 " manually start CoC
 nmap <leader>cc :<C-u>CocStart<CR>
 " manually stop CoC
+
