@@ -66,6 +66,14 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
 
   use('MunifTanjim/prettier.nvim') --Prettier plugin for Neovim's built in 
+  -- nvim tree explorer
+  use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- optional, for file icons
+  },
+  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

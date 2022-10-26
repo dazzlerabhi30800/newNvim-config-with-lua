@@ -9,3 +9,7 @@ require('buffer_config')
 require'lspconfig'.tsserver.setup {}
 require('colorizer_config')
 -- require'colorizer'.setup()
+require('keymaps')
+require('nvim_tree')
+
+

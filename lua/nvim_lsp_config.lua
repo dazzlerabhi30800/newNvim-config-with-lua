@@ -13,3 +13,5 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
 }
+
+require'lspconfig'.luau_lsp.setup{}
