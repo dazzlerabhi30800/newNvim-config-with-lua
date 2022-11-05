@@ -21,6 +21,22 @@ nvim_lsp.tsserver.setup {
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
 }
+nvim_lsp.sumneko_lua.setup{
+  on_attch = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        --Get the language server to recognize the "vim" global
+        globals = {'vim'}
+      },
+
+      workspace = {
+        --Make the server aware of Neovim runtime filetypes
+        library = vim.api.nvim_get_runtime_file("", true)
+      }
+    }
+  }
+}
 
 
 

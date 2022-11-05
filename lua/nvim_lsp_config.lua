@@ -14,4 +14,4 @@ require'lspconfig'.clangd.setup {
   capabilities = capabilities,
 }
 
-require'lspconfig'.luau_lsp.setup{}
+require'lspconfig'.lua_lsp.setup{}
