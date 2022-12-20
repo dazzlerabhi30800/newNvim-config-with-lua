@@ -36,19 +36,19 @@ opt.iskeyword:append("-")
 
 -- set cursor to line on insert mode
 -- opt.guicursor = "a:block-Cursor/lCursor"
-opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor20,r-cr:hor20,o:hor50"
--- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver10,r-cr:ver10,o:ver10"
+-- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor20,r-cr:hor20,o:hor50"
+opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver10,r-cr:ver10,o:ver10"
 
 -- for the emmet
 vim.g.user_emmet_leader_key = "<Tab>"
 
 -- cursor line options
-vim.o.cursorline = true
+-- vim.o.cursorline = true
 -- vim.api.nvim_set_hl(0, "CursorLine", { underline = true })
--- vim.api.nvim_command("hi CursorLine guifg=NONE guibg=#653328")
+vim.api.nvim_command("hi CursorLine guifg=NONE guibg=#653328")
 
 -- for configuring the neovide
-vim.g.neovide_transparency = 0.8
+vim.g.neovide_transparency = 0.9
 -- vim.g.neovide_background_color = "#0f1117"
 vim.g.neovide_scale_factor = 0.9
 vim.g.neovide_refresh_rate = 50
@@ -63,3 +63,8 @@ vim.g.neovide_remember_window_size = true
 
 -- Changing the background color
 -- vim.cmd([[hi normal guibg=NONE ctermbg=NONE]])
+
+if vim.g.neovide == true then
+	-- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor20,r-cr:hor20,o:hor50"
+	opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver10,r-cr:ver10,o:ver10"
+end

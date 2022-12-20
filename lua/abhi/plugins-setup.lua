@@ -110,21 +110,45 @@ return packer.startup(function(use)
 
 	--for zen mode / centered layout
 	-- Lua
-	use({
-		"folke/zen-mode.nvim",
-		config = function()
-			require("zen-mode").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
-		end,
-	})
+	-- use({
+	-- 	"folke/zen-mode.nvim",
+	-- 	config = function()
+	-- 		require("zen-mode").setup({
+	-- 			-- your configuration comes here
+	-- 			-- or leave it empty to use the default settings
+	-- 			-- refer to the configuration section below
+	-- 		})
+	-- 	end,
+	-- })
+	--theme
 	use("ellisonleao/gruvbox.nvim")
 	use("audibleblink/hackthebox.vim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({
+		"rose-pine/neovim",
+		as = "rose-pine",
+		config = function()
+			vim.cmd("colorscheme rose-pine")
+		end,
+	})
 	--for zoom in neovide
 	use("drzel/vim-gui-zoom")
+	use("Xh4H/hackthebox-1")
+	use("EdenEast/nightfox.nvim")
+	-- Lua
+	use({
+		"olimorris/persisted.nvim",
+		--module = "persisted", -- For lazy loading
+		config = function()
+			require("persisted").setup()
+			require("telescope").load_extension("persisted") -- To load the telescope extension
+		end,
+	})
+
+	-- plugin for image viewer
+
+	-- for the changing root dir
+	-- use("https://gitlab.com/__tpb/monokai-pro.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

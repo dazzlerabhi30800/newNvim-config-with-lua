@@ -14,7 +14,6 @@ require("abhi.plugins.lsp.null-ls")
 require("abhi.plugins.autopairs")
 require("abhi.plugins.treesitter")
 require("abhi.plugins.colorizer")
--- require("abhi.plugins.neosolarized")
-require("abhi.plugins.gruvbox")
+require("abhi.plugins.persisted")
 
 -- require("abhi.plugins.zenMode")

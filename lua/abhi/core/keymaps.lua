@@ -31,6 +31,9 @@ vim.api.nvim_set_keymap("i", "<A-k>", "<Esc>:m '<-2<CR>==gi", { noremap = true }
 vim.api.nvim_set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true })
 
+-- for the telescope persist
+vim.api.nvim_set_keymap("n", "<C-t>", ":Telescope persisted<CR>", { noremap = true })
+
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
@@ -41,3 +44,7 @@ keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>") -- toggle file explorer
 local mapKey = vim.api.nvim_set_keymap
 mapKey("n", "<C-p>", ":ZoomIn<CR>", { noremap = true, silent = true })
 mapKey("n", "<C-m>", ":ZoomOut<CR>", { noremap = true, silent = true })
+
+-- for colorizer
+mapKey("n", "<C-a>", ":ColorizerToggle<CR>", { noremap = true, silent = true })
+mapKey("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
