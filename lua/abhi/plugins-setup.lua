@@ -124,13 +124,7 @@ return packer.startup(function(use)
 	use("ellisonleao/gruvbox.nvim")
 	use("audibleblink/hackthebox.vim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use({
-		"rose-pine/neovim",
-		as = "rose-pine",
-		config = function()
-			vim.cmd("colorscheme rose-pine")
-		end,
-	})
+
 	--for zoom in neovide
 	use("drzel/vim-gui-zoom")
 	use("Xh4H/hackthebox-1")
@@ -144,8 +138,10 @@ return packer.startup(function(use)
 			require("telescope").load_extension("persisted") -- To load the telescope extension
 		end,
 	})
-
-	-- plugin for image viewer
+	use("navarasu/onedark.nvim")
+	use("folke/lazy.nvim")
+	use("Shatur/neovim-ayu")
+	use("folke/tokyonight.nvim")
 
 	-- for the changing root dir
 	-- use("https://gitlab.com/__tpb/monokai-pro.nvim")

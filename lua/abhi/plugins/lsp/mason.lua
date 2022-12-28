@@ -25,7 +25,7 @@ mason_lspconfig.setup({
 		"tsserver",
 		"html",
 		"cssls",
-		"tailwindcss",
+		-- "tailwindcss",
 		"sumneko_lua",
 		"quick_lint_js",
 	},

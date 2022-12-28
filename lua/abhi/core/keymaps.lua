@@ -47,4 +47,5 @@ mapKey("n", "<C-m>", ":ZoomOut<CR>", { noremap = true, silent = true })
 
 -- for colorizer
 mapKey("n", "<C-a>", ":ColorizerToggle<CR>", { noremap = true, silent = true })
+--for save file
 mapKey("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
