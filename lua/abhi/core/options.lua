@@ -9,6 +9,11 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
+opt.smartindent = true
+opt.title = true
+vim.scriptencoding = "utf-8"
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
 
 -- disable commenting the next line automatically
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
@@ -22,8 +27,9 @@ vim.api.nvim_create_autocmd("ExitPre", {
 })
 
 --aditional configuration
-opt.cmdheight = 1
+opt.cmdheight = 2
 opt.laststatus = 2
+opt.splitkeep = "cursor"
 
 --line wrapping
 opt.wrap = false
@@ -56,9 +62,9 @@ opt.iskeyword:append("-") -- set cursor to line on insert mode
 
 -- command to highlight line
 vim.o.cursorline = true
-vim.cmd[[highlight CursorLine guibg=#004080 ctermbg=darkblue]]
+-- vim.cmd([[highlight CursorLine guibg=#004080 ctermbg=darkblue]])
 vim.cmd(
-	[[au CursorMoved * :hi LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#D4D6D6 guibg=NONE]]
+	[[au CursorMoved * :hi LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#ACAEAF guibg=NONE]]
 )
 
 -- for configuring the neovide
