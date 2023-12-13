@@ -61,7 +61,7 @@ return {
 				}),
 			},
 		})
-		vim.o.lazyredraw = false -- or
-		vim.cmd([[ set nolazyredraw ]])
+		-- vim.o.lazyredraw = false -- or
+		-- vim.cmd([[ set nolazyredraw ]])
 	end,
 }

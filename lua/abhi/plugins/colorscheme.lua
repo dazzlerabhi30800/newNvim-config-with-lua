@@ -1,21 +1,15 @@
 return {
 	{
-		"catppuccin/nvim",
-		priority = 1000, -- make sure to load this before all the other start plugins
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			-- load the colorscheme here
-			vim.cmd([[colorscheme catppuccin]])
-			require("catppuccin").setup({
-				flavour = "mocha",
-				transparent_background = true,
+			vim.cmd([[colorscheme solarized-osaka]])
+			vim.cmd[[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]]
+			require("solarized-osaka").setup({
+				transparent = true,
 			})
-			if vim.g.neovide == true then
-				require("catppuccin").setup({
-					flavour = "mocha",
-					-- transparent_background = false,
-				})
-			end
-			require("catppuccin").load()
 		end,
+		-- require("solarized-osaka").load(),
 	},
 }

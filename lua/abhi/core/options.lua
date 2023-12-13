@@ -53,9 +53,13 @@ opt.iskeyword:append("-") -- set cursor to line on insert mode
 -- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver10,r-cr:ver10,o:ver10"
 -- opt.guicursor = "n-v-c:blinkon0-Cursor/lCursor,i-cr:block-cursor,r-cr:block-cursor,o:ver20" --
 -- cursor line options
--- vim.o.cursorline = true
--- vim.api.nvim_set_hl(0, "CursorLine", { underline = true })
-vim.api.nvim_command("hi CursorLine guifg=NONE guibg=#653328")
+
+-- command to highlight line
+vim.o.cursorline = true
+vim.cmd[[highlight CursorLine guibg=#004080 ctermbg=darkblue]]
+vim.cmd(
+	[[au CursorMoved * :hi LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#D4D6D6 guibg=NONE]]
+)
 
 -- for configuring the neovide
 vim.g.neovide_transparency = 0.9
