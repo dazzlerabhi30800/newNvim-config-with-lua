@@ -88,8 +88,12 @@ mapKey("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", { noremap = true, silent
 
 -- for the emmet
 -- vim.g.user_emmet_mode = "a"
-vim.g.user_emmet_leader_key = "<Tab>"
--- vim.g.user_emmet_expandabrr_key = "<Tab>"
+vim.g.user_emmet_leader_key = "<tab>"
+
+vim.api.nvim_set_keymap("i", "<tab>", "<Plug>(emmet-expand-abbr)", {})
+-- vim.api.nvim_set_keymap("i", "<C-y>", "<Plug>(emmet-update-abbr)", {})
+-- vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>(emmet-next-edit-point)", {})
+-- vim.api.nvim_set_keymap("i", "<C-k>", "<Plug>(emmet-prev-edit-point)", {})
 
 -- additional config for emmet
 mapKey("v", "<A-f-o>", ":foldclose<CR>", { noremap = true, silent = true })
