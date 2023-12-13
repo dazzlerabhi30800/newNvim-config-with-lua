@@ -11,8 +11,8 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- disable commenting the next line automatically
-vim.opt_local.formatoptions:remove({ "r", "o" })
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
+vim.opt_local.formatoptions:remove({ "r", "o" })
 
 -- for changing the cursor back to normal after quitting nvim
 vim.api.nvim_create_autocmd("ExitPre", {
@@ -59,6 +59,7 @@ vim.api.nvim_command("hi CursorLine guifg=NONE guibg=#653328")
 
 -- for configuring the neovide
 vim.g.neovide_transparency = 0.9
+vim.g.transparency = 0.9
 -- vim.g.neovide_background_color = "#0f1117"
 vim.g.neovide_scale_factor = 0.9
 vim.g.neovide_refresh_rate = 90

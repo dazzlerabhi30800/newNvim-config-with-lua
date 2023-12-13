@@ -23,24 +23,19 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<A-n>", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<A-p>", ":tabp<CR>") --  go to previous tab
 
-vim.api.nvim_set_keymap("n", "<M-k>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", { noremap = true })
-
 -- for the moving line up and down
+vim.api.nvim_set_keymap("n", "<M-k>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-j>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", { noremap = true })
 vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", { noremap = true })
---
--- vim.api.nvim_set_keymap("i", "<M-j>", "<Esc>:m '>+1<CR>==gi", { noremap = true })
--- vim.api.nvim_set_keymap("i", "<M-k>", "<Esc>:m '<-2<CR>==gi", { noremap = true })
--- vim.api.nvim_set_keymap("v", "<M-j>", ":m '>+1<CR>gv=gv", { noremap = true })
--- vim.api.nvim_set_keymap("v", "<M-k>", ":m '<-2<CR>gv=gv", { noremap = true })
 
--- vim.api.nvim_set_keymap("v", "J", "<cmd>m '>+1<CR>gv=gv", { noremap = true })
--- vim.api.nvim_set_keymap("v", "K", "<cmd>m '<-2<CR>gv=gv", { noremap = true })
-
+-- vim.api.nvim_set_keymap("v", "<M-k>", ':echo "Alt + k pressed"<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("v", "<M-j>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true })
+vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true })
 -- for the telescope persist
 
-vim.api.nvim_set_keymap("n", "<C-t>", ":Telescope persisted<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-t>", ":Telescope persisted<CR>", { noremap = true })
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
@@ -97,8 +92,8 @@ vim.g.user_emmet_leader_key = "<Tab>"
 -- vim.g.user_emmet_expandabrr_key = "<Tab>"
 
 -- additional config for emmet
-mapKey("v", "<A-F>", ":fold<CR>", { noremap = true, silent = true })
 mapKey("v", "<A-f-o>", ":foldclose<CR>", { noremap = true, silent = true })
+mapKey("v", "<A-F>", ":fold<CR>", { noremap = true, silent = true })
 
 -- keys for auto pairs
 -- vim.api.nvim_set_keymap("i", "<C-Space>", "<Plug>(CompletionAutoPairs)", { noremap = true, silent = true })

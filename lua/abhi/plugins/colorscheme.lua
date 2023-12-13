@@ -12,7 +12,7 @@ return {
 			if vim.g.neovide == true then
 				require("catppuccin").setup({
 					flavour = "mocha",
-					transparent_background = false,
+					-- transparent_background = false,
 				})
 			end
 			require("catppuccin").load()
