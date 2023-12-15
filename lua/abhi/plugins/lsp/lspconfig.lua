@@ -87,66 +87,28 @@ return {
 			on_attach = on_attach,
 		})
 
-		typescript.setup({
-			disable_commands = false,
-			debug = false,
-			go_to_source_definition = {
-				fallback = true,
-			},
-			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-			root_dir = function()
-				return vim.loop.cwd()
-			end,
-			-- root_dir = require("lspconfig").util.root_pattern("package.json"),
-			server = {
-				capabilities = capabilities,
-				on_attach = on_attach,
-			},
-		})
+		-- typescript.setup({
+		-- 	disable_commands = false,
+		-- 	debug = false,
+		-- 	go_to_source_definition = {
+		-- 		fallback = true,
+		-- 	},
+		-- 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+		-- 	root_dir = function()
+		-- 		return vim.loop.cwd()
+		-- 	end,
+		-- 	-- root_dir = require("lspconfig").util.root_pattern("package.json"),
+		-- 	server = {
+		-- 		capabilities = capabilities,
+		-- 		on_attach = on_attach,
+		-- 	},
+		-- })
 
 		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-
-		-- configure tailwindcss server
-		-- lspconfig["tailwindcss"].setup({
-		--   capabilities = capabilities,
-		--   on_attach = on_attach,
-		-- })
-
-		-- configure svelte server
-		-- lspconfig["svelte"].setup({
-		--   capabilities = capabilities,
-		--   on_attach = on_attach,
-		-- })
-
-		-- configure prisma orm server
-		-- lspconfig["prismals"].setup({
-		--   capabilities = capabilities,
-		--   on_attach = on_attach,
-		-- })
-		--
-		-- -- configure graphql language server
-		-- lspconfig["graphql"].setup({
-		--   capabilities = capabilities,
-		--   on_attach = on_attach,
-		--   filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		-- })
-
-		-- configure emmet language server
-		-- lspconfig["emmet_ls"].setup({
-		--   capabilities = capabilities,
-		--   on_attach = on_attach,
-		--   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		-- })
-
-		-- configure python server
-		-- lspconfig["pyright"].setup({
-		--   capabilities = capabilities,
-		--   on_attach = on_attach,
-		-- })
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
@@ -170,3 +132,41 @@ return {
 		})
 	end,
 }
+
+-- configure tailwindcss server
+-- lspconfig["tailwindcss"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
+
+-- configure svelte server
+-- lspconfig["svelte"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
+
+-- configure prisma orm server
+-- lspconfig["prismals"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
+--
+-- -- configure graphql language server
+-- lspconfig["graphql"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+-- })
+
+-- configure emmet language server
+-- lspconfig["emmet_ls"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+-- })
+
+-- configure python server
+-- lspconfig["pyright"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })

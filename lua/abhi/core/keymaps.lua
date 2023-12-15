@@ -1,7 +1,6 @@
 vim.g.leader = " "
 
 local keymap = vim.keymap --for conciseness
-local api_keymap = vim.api.nvim_set_keymap
 --general keymaps
 
 keymap.set("i", "jk", "<ESC>")
@@ -41,7 +40,8 @@ vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true })
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- nvim-tree
-keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>") -- toggle file explorer
+-- keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>") -- toggle file explorer
+-- keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- for neovide zoom
 local mapKey = vim.api.nvim_set_keymap

@@ -123,3 +123,11 @@ vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 -- vim.keymap.set("n", "<C-j>", ":m .+1<CR>==")
 -- vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 -- vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
+
+vim.keymap.set("n", "<M-k>", ':echo "Alt + j pressed"<CR>')
+vim.keymap.set("n", "<M-j>", ':echo "Alt + j pressed"<CR>')
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
