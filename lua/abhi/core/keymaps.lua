@@ -12,10 +12,10 @@ keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
+keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
+keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
@@ -23,10 +23,11 @@ keymap.set("n", "<A-n>", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<A-p>", ":tabp<CR>") --  go to previous tab
 
 -- for the moving line up and down
-vim.api.nvim_set_keymap("n", "<M-k>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-j>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<M-k>", ':echo "Alt + k pressed"<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<M-j>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("n", "<M-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-j>", ":m .+1<CR>==", { noremap = true, silent = true })
 
 -- vim.api.nvim_set_keymap("v", "<M-k>", ':echo "Alt + k pressed"<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("v", "<M-j>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
