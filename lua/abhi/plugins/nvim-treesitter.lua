@@ -28,6 +28,7 @@ return {
 					"yaml",
 					"html",
 					"css",
+					"astro",
 					"prisma",
 					"markdown",
 					"markdown_inline",
