@@ -79,7 +79,7 @@ return {
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "*" },
+			-- filetypes = { "*" },
 		})
 
 		-- configure typescript server with plugin
@@ -88,25 +88,14 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- lspconfig.astro_language_server.setup({
-		-- 	cmd = { "astro_language_server", "--stdio" },
-		-- 	filetypes = "astro",
-		-- 	root_dir = lspconfig.util.root_pattern("package.json"),
-		-- })
-
-		-- lspconfig["astro"].setup({
-		-- 	filetypes = { "astro" },
-		-- 	on_attach = on_attach,
-		-- 	root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git", ".astro"),
-		-- })
 		lspconfig.astro.setup({
-			init_options = {
-				typescript = {
-					server_path = vim.fs.normalize(
-						"~/AppData/Roaming/npm/node_modules/typescript/lib/tsserverlibrary.js"
-					),
-				},
-			},
+			-- init_options = {
+			-- 	typescript = {
+			-- 		server_path = vim.fs.normalize(
+			-- 			"~/AppData/Roaming/npm/node_modules/typescript/lib/tsserverlibrary.js"
+			-- 		),
+			-- 	},
+			-- },
 		})
 
 		typescript.setup({

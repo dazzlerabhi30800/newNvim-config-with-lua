@@ -18,7 +18,6 @@ return {
 				yaml = { "prettier" },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
-				-- astro = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},
