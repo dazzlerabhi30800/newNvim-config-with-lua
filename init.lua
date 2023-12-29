@@ -6,7 +6,8 @@ if vim.g.vscode then
 	-- Optional plugin
 	-- vim.cmd([[source $HOME/.config/nvim/vscode/easymotion-config.vim]])
 else
-	vim.g.leader = " "
+	-- vim.g.mapleader = " "
 	require("abhi.core")
 	require("abhi.lazy")
 end
+

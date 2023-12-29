@@ -24,6 +24,10 @@ local files = {
 	fileEntries = function()
 		vim.fn.VSCodeNotify("welcome.showNewFileEntries")
 	end,
+
+  openFileExplorer = function()
+		vim.fn.VSCodeNotify("revealInExplorer")
+  end
 }
 
 local navigation = {
@@ -38,6 +42,12 @@ local navigation = {
 	end,
 	navigationRight = function()
 		vim.fn.VSCodeNotify("workbench.action.navigateRight")
+	end,
+	moveLinesDown = function()
+		vim.fn.VSCodeNotify("editor.action.moveLinesDownAction")
+	end,
+	moveLinesUp = function()
+		vim.fn.VSCodeNotify("editor.action.moveLinesUpAction")
 	end,
 }
 
@@ -92,11 +102,14 @@ vim.keymap.set({ "v" }, "gcc", comment.commentLine)
 vim.keymap.set({ "n" }, "K", files.definitionHover)
 vim.keymap.set({ "n" }, "<leader>f", files.quickOpen)
 vim.keymap.set({ "n" }, "<leader>n", files.fileEntries)
+vim.keymap.set({ "n" }, "<leader>r", files.openFileExplorer)
 
 vim.keymap.set({ "n" }, "<C-k>", navigation.navigationUp)
 vim.keymap.set({ "n" }, "<C-j>", navigation.navigationDown)
 vim.keymap.set({ "n" }, "<C-h>", navigation.navigationLeft)
 vim.keymap.set({ "n" }, "<C-l>", navigation.navigationRight)
+-- vim.keymap.set({ "n" }, "<M-j>", navigation.moveLinesDown)
+-- vim.keymap.set({ "n" }, "<M-k>", navigation.moveLinesUp)
 
 vim.keymap.set({ "n" }, "<C-up>", changeWidthHeight.increaseHeight)
 vim.keymap.set({ "n" }, "<C-down>", changeWidthHeight.decreaseHeight)
@@ -119,7 +132,9 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt_local.formatoptions:remove({ "r", "o" })
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 
--- vim.keymap.set("n", "<C-k>", ":m .-2<CR>==")
--- vim.keymap.set("n", "<C-j>", ":m .+1<CR>==")
--- vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
--- vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
+-- for the moving line up and down
+-- vim.keymap.set("n", "<M-k>", ':echo "Alt + k pressed"<CR>', { noremap = true, silent = true })
+-- vim.keymap.set("n", "<M-j>", ':echo "Alt + j pressed"<CR>', { noremap = true, silent = true })
+--
+-- vim.keymap.set("n", "<leader>up", ":m .-2<CR>==", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>down", ":m .+1<CR>==", { noremap = true, silent = true })
