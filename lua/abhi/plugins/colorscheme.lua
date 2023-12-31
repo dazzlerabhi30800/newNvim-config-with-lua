@@ -6,13 +6,14 @@ return {
 		config = function()
 			vim.cmd([[colorscheme solarized-osaka]])
 			require("solarized-osaka").setup({
+        style="night",
 				transparent = true,
+				lualine_bold = true,
 			})
 			if vim.g.neovide == true then
 				require("solarized-osaka").setup({
 					transparent = false,
-          day_brightness = 0.9,
-          lualine_bold = true
+					day_brightness = 0.9,
 				})
 			end
 			require("solarized-osaka").load()
@@ -34,7 +35,7 @@ return {
 	-- 			})
 	-- 		end
 	-- 		require("catppuccin").load()
- --      vim.cmd([[colorscheme catppuccin]])
+	--      vim.cmd([[colorscheme catppuccin]])
 	-- 	end,
 	-- },
 }
