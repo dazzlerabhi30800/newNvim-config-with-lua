@@ -12,15 +12,15 @@ keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 -- window management
-keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+keymap.set("n", "<leader>sx", ":close<CR>")    -- close current split window
+keymap.set("n", "<leader>sv", "<C-w>v")        -- split window vertically
+keymap.set("n", "<leader>se", "<C-w>=")        -- make split windows equal width & height
+keymap.set("n", "<leader>sh", "<C-w>s")        -- split window horizontally
 
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+keymap.set("n", "<leader>to", ":tabnew<CR>")   -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<A-n>", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<A-p>", ":tabp<CR>") --  go to previous tab
+keymap.set("n", "<A-n>", ":tabn<CR>")          --  go to next tab
+keymap.set("n", "<A-p>", ":tabp<CR>")          --  go to previous tab
 
 -- for the moving line up and down
 vim.api.nvim_set_keymap("n", "<M-k>", ':echo "Alt + k pressed"<CR>', { noremap = true, silent = true })
@@ -89,6 +89,7 @@ mapKey("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", { noremap = true, silent
 vim.g.user_emmet_leader_key = "<tab>"
 
 vim.api.nvim_set_keymap("i", "<tab>", "<Plug>(emmet-expand-abbr)", {})
+vim.api.nvim_set_keymap("n", "<tab>", "<Plug>(emmet-expand-abbr)", {})
 -- vim.api.nvim_set_keymap("i", "<C-y>", "<Plug>(emmet-update-abbr)", {})
 -- vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>(emmet-next-edit-point)", {})
 -- vim.api.nvim_set_keymap("i", "<C-k>", "<Plug>(emmet-prev-edit-point)", {})
@@ -103,3 +104,20 @@ keymap.set("n", "<leader>t", ":terminal<CR>");
 
 -- keys for auto pairs
 -- vim.api.nvim_set_keymap("i", "<C-Space>", "<Plug>(CompletionAutoPairs)", { noremap = true, silent = true })
+
+
+--terminal keybinds
+
+
+
+-- Move to the terminal above the current split
+vim.api.nvim_set_keymap('t', '<C-h>', '<C-\\><C-N><C-w>k', { noremap = true, silent = true })
+
+-- Move to the terminal below the current split
+vim.api.nvim_set_keymap('t', '<C-l>', '<C-\\><C-N><C-w>j', { noremap = true, silent = true })
+
+-- Move to the terminal on the left of the current split
+vim.api.nvim_set_keymap('t', '<C-j>', '<C-\\><C-N><C-w>h', { noremap = true, silent = true })
+
+-- Move to the terminal on the right of the current split
+vim.api.nvim_set_keymap('t', '<C-k>', '<C-\\><C-N><C-w>l', { noremap = true, silent = true })

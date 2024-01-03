@@ -1,25 +1,25 @@
 return {
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme solarized-osaka]])
-			require("solarized-osaka").setup({
-        style="night",
-				transparent = true,
-				lualine_bold = true,
-			})
-			if vim.g.neovide == true then
-				require("solarized-osaka").setup({
-					transparent = false,
-					day_brightness = 0.9,
-				})
-			end
-			require("solarized-osaka").load()
-			vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
-		end,
-	},
+	-- {
+	-- 	"craftzdog/solarized-osaka.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme solarized-osaka]])
+	-- 		require("solarized-osaka").setup({
+	--        style="night",
+	-- 			transparent = true,
+	-- 			lualine_bold = true,
+	-- 		})
+	-- 		if vim.g.neovide == true then
+	-- 			require("solarized-osaka").setup({
+	-- 				transparent = false,
+	-- 				day_brightness = 0.9,
+	-- 			})
+	-- 		end
+	-- 		require("solarized-osaka").load()
+	-- 		vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+	-- 	end,
+	-- },
 	-- {
 	-- 	"catppuccin/nvim",
 	-- 	name = "catppuccin",
@@ -38,4 +38,15 @@ return {
 	--      vim.cmd([[colorscheme catppuccin]])
 	-- 	end,
 	-- },
+	{
+		"bluz71/vim-nightfly-colors",
+		name = "nightfly",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.nightflyTransparent = true
+      vim.cmd([[colorscheme nightfly]])
+      vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+		end,
+	},
 }
