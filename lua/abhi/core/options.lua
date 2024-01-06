@@ -34,7 +34,7 @@ opt.splitkeep = "cursor"
 
 --line wrapping
 -- opt.wrap = false
-opt.wrap = true 
+opt.wrap = true
 
 -- search settings
 opt.ignorecase = true
@@ -60,7 +60,7 @@ opt.iskeyword:append("-") -- set cursor to line on insert mode
 -- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver7,r-cr:ver7,o:ver7"
 -- opt.guicursor = "a:block-Cursor/lCursor"
 -- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor10,r-cr:hor10,o:hor10"
--- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver10,r-cr:ver10,o:ver10"
+opt.guicursor = "n-v:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"
 -- opt.guicursor = "n-v-c:blinkon0-Cursor/lCursor,i-cr:block-cursor,r-cr:block-cursor,o:ver20" --
 -- cursor line options
 

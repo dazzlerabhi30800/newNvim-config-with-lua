@@ -14,7 +14,7 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
-				yaml = { "prettier" },
+				yamlfix = { nil },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				lua = { "stylua" },
@@ -26,7 +26,6 @@ return {
 			-- 	timeout_ms = 1000,
 			-- },
 		})
-
 		vim.keymap.set({ "n", "v" }, "<leader>w", function()
 			conform.format({
 				lsp_fallback = true,

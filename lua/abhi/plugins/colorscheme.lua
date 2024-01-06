@@ -45,8 +45,11 @@ return {
 		priority = 1000,
 		config = function()
 			vim.g.nightflyTransparent = true
-      vim.cmd([[colorscheme nightfly]])
-      vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+			if vim.g.neovide == true then
+				vim.g.nightflyTransparent = false
+			end
+			vim.cmd([[colorscheme nightfly]])
+			vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
 		end,
 	},
 }

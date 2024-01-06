@@ -25,9 +25,9 @@ local files = {
 		vim.fn.VSCodeNotify("welcome.showNewFileEntries")
 	end,
 
-  openFileExplorer = function()
+	openFileExplorer = function()
 		vim.fn.VSCodeNotify("revealInExplorer")
-  end
+	end,
 }
 
 local navigation = {
