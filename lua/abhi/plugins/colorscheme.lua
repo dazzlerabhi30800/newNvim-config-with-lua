@@ -44,7 +44,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.g.nightflyTransparent = true
+      vim.g.nightflyCursor = true
+      vim.g.nightflyTransparent = true
 			if vim.g.neovide == true then
 				vim.g.nightflyTransparent = false
 			end

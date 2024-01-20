@@ -21,14 +21,14 @@ return {
 				python = { "isort", "black" },
 			},
 			-- format_on_save = {
-			-- 	lsp_fallback = true,
+			-- 	lsp_fallback = false,
 			-- 	async = false,
-			-- 	timeout_ms = 1000,
+			-- 	timeout_ms = 200,
 			-- },
 		})
 		vim.keymap.set({ "n", "v" }, "<leader>w", function()
 			conform.format({
-				lsp_fallback = true,
+				lsp_fallback = false,
 				async = false,
 				timeout_ms = 1000,
 			})
