@@ -28,6 +28,10 @@ local files = {
 	openFileExplorer = function()
 		vim.fn.VSCodeNotify("revealInExplorer")
 	end,
+
+	formatDocument = function()
+		vim.fn.VSCodeNotify("editor.action.formatDocument")
+	end,
 }
 
 local navigation = {
@@ -103,6 +107,7 @@ vim.keymap.set({ "n" }, "K", files.definitionHover)
 vim.keymap.set({ "n" }, "<leader>f", files.quickOpen)
 vim.keymap.set({ "n" }, "<leader>n", files.fileEntries)
 vim.keymap.set({ "n" }, "<leader>r", files.openFileExplorer)
+vim.keymap.set({ "n" }, "<leader>w", files.formatDocument)
 
 vim.keymap.set({ "n" }, "<C-k>", navigation.navigationUp)
 vim.keymap.set({ "n" }, "<C-j>", navigation.navigationDown)
