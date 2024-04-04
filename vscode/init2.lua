@@ -113,8 +113,8 @@ vim.keymap.set({ "n" }, "<C-k>", navigation.navigationUp)
 vim.keymap.set({ "n" }, "<C-j>", navigation.navigationDown)
 vim.keymap.set({ "n" }, "<C-h>", navigation.navigationLeft)
 vim.keymap.set({ "n" }, "<C-l>", navigation.navigationRight)
--- vim.keymap.set({ "n" }, "<M-j>", navigation.moveLinesDown)
--- vim.keymap.set({ "n" }, "<M-k>", navigation.moveLinesUp)
+-- vim.keymap.set({ "n" }, "<A-j>", navigation.moveLinesDown)
+-- vim.keymap.set({ "n" }, "<A-k>", navigation.moveLinesUp)
 
 vim.keymap.set({ "n" }, "<C-up>", changeWidthHeight.increaseHeight)
 vim.keymap.set({ "n" }, "<C-down>", changeWidthHeight.decreaseHeight)
@@ -129,13 +129,21 @@ vim.keymap.set({ "n" }, "<leader>5", tabs.tab5)
 vim.keymap.set({ "n" }, "<leader>6", tabs.tab6)
 vim.keymap.set({ "n" }, "<leader>7", tabs.tab7)
 
--- vim.keymap.set("n", "k", "gk")
--- vim.keymap.set("n", "j", "gj")
-
 vim.opt.clipboard:append("unnamedplus")
 
 vim.opt_local.formatoptions:remove({ "r", "o" })
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
+
+-- vim.keymap.set("n", "k", "gk", { noremap = true, silent = true })
+-- vim.keymap.set("n", "j", "gj", { noremap = true, silent = true })
+
+-- vim.keymap.set("n", "k", "gk")
+-- vim.keymap.set("v", "k", "gk")
+-- vim.keymap.set("n", "j", "gj")
+-- vim.keymap.set("v", "j", "gj")
+
+-- vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true })
+-- vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true })
 
 -- for the moving line up and down
 -- vim.keymap.set("n", "<M-k>", ':echo "Alt + k pressed"<CR>', { noremap = true, silent = true })

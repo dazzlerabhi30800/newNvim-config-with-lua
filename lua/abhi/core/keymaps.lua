@@ -98,7 +98,7 @@ mapKey("v", "<A-f-o>", ":foldclose<CR>", { noremap = true, silent = true })
 mapKey("v", "<A-F>", ":fold<CR>", { noremap = true, silent = true })
 
 --open terminal
-keymap.set("n", "<leader>t", ":terminal<CR>")
+-- keymap.set("n", "<leader>t", ":terminal<CR>")
 
 -- keys for auto pairs
 -- vim.api.nvim_set_keymap("i", "<C-Space>", "<Plug>(CompletionAutoPairs)", { noremap = true, silent = true })

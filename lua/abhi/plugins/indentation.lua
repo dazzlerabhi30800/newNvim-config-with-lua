@@ -6,11 +6,12 @@ return {
 		config = function()
 			require("ibl").setup({
 				indent = {
-					char = "│",
+					char = "|",
+					-- highlight = { "Whitespace", "CursorColumn" },
 				},
 				whitespace = {
 					highlight = "IblWhitespace",
-					remove_blankline_trail = false,
+					remove_blankline_trail = true,
 				},
 				scope = {
 					include = {

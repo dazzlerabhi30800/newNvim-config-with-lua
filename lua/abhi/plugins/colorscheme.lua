@@ -28,6 +28,10 @@ return {
 			require("catppuccin").setup({
 				flavour = "mocha",
 				transparent_background = true,
+				styles = {
+					functions = { "italic" },
+					types = { "italic" },
+				},
 			})
 			if vim.g.neovide == true then
 				require("catppuccin").setup({
@@ -37,7 +41,8 @@ return {
 					},
 					color_overrides = {
 						all = {
-							base = "#181A27",
+							-- base = "#181A27",
+							base = "#232639",
 						},
 					},
 				})
