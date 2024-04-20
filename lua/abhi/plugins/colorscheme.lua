@@ -29,7 +29,7 @@ return {
 				flavour = "mocha",
 				transparent_background = true,
 				styles = {
-					functions = { "italic" },
+					-- functions = { "italic" },
 					types = { "italic" },
 				},
 			})
@@ -51,6 +51,23 @@ return {
 			vim.cmd([[colorscheme catppuccin]])
 		end,
 	},
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   name = "kanagawa",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('kanagawa').setup({
+  --       compile = true,
+  --       transparent = true,
+  --       theme = 'wave'
+  --     })
+  --     require('kanagawa').load()
+		-- 	vim.cmd([[colorscheme kanagawa]])
+		-- 	vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+		-- 	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
+  --   end
+  -- },
 	-- {
 	-- 	"bluz71/vim-nightfly-colors",
 	-- 	name = "nightfly",
