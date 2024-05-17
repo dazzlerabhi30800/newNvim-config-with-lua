@@ -53,6 +53,10 @@ local navigation = {
 	moveLinesUp = function()
 		vim.fn.VSCodeNotify("editor.action.moveLinesUpAction")
 	end,
+
+	focusLeftGroup = function()
+		vim.fn.VSCodeNotify("workbench.action.focusNextGroup")
+	end,
 }
 
 local changeWidthHeight = {
@@ -113,6 +117,7 @@ vim.keymap.set({ "n" }, "<C-k>", navigation.navigationUp)
 vim.keymap.set({ "n" }, "<C-j>", navigation.navigationDown)
 vim.keymap.set({ "n" }, "<C-h>", navigation.navigationLeft)
 vim.keymap.set({ "n" }, "<C-l>", navigation.navigationRight)
+-- vim.keymap.set({ "n", "i" }, "<C-K>", navigation.focusLeftGroup)
 -- vim.keymap.set({ "n" }, "<A-j>", navigation.moveLinesDown)
 -- vim.keymap.set({ "n" }, "<A-k>", navigation.moveLinesUp)
 
