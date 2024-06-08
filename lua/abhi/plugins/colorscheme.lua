@@ -84,20 +84,37 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 	-- 	end,
 	-- },
+	-- {
+	-- 	"askfiy/visual_studio_code",
+	-- 	priority = 10000,
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		require("visual_studio_code").setup({
+	-- 			mode = "dark",
+	-- 			preset = true,
+	-- 			transparent = true,
+	-- 		})
+	-- 		vim.cmd([[colorscheme visual_studio_code]])
+	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#69696B", italic = true })
+	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
+	-- 	end,
+	-- },
 	{
-		"askfiy/visual_studio_code",
-		priority = 10000,
+		"Mofiqul/vscode.nvim",
+		priority = 1000,
 		lazy = false,
 		config = function()
-			require("visual_studio_code").setup({
-				mode = "dark",
-				preset = true,
+			require("vscode").setup({
 				transparent = true,
+				italic_comments = true,
+				color_overrides = {
+					vscGreen = "#69696B",
+				},
 			})
-			vim.cmd([[colorscheme visual_studio_code]])
+			require("vscode").load()
 			vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 			vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
-			vim.api.nvim_set_hl(0, "Comment", { fg = "#69696B", italic = true })
 		end,
 	},
 }
