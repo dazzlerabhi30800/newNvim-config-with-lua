@@ -79,7 +79,7 @@ return {
 		vim.keymap.set("n", ";t", function()
 			builtin.help_tags()
 		end)
-		vim.keymap.set("n", ";;", function()
+		vim.keymap.set("n", "<leader>;", function()
 			builtin.resume()
 		end)
 		vim.keymap.set("n", ";e", function()

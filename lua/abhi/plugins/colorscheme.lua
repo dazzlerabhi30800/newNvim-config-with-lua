@@ -112,9 +112,33 @@ return {
 					vscGreen = "#69696B",
 				},
 			})
+			if vim.g.neovide == true then
+				require("vscode").setup({
+					transparent = false,
+				})
+			end
 			require("vscode").load()
 			vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 			vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 		end,
 	},
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	priority = 1000,
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		require("tokyonight").setup({
+	-- 			style = "storm",
+	-- 			transparent = true,
+	-- 			comments = { italic = true },
+	-- 			keywords = { italic = true },
+	--        on_highlights = function(hl)
+	--
+	--        end
+	-- 		})
+	--      require("tokyonight").load()
+	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
+	-- 	end,
+	-- },
 }
