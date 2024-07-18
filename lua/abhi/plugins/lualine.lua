@@ -15,7 +15,6 @@ return {
 			bg = "#112638",
 			inactive_bg = "#2c3043",
 		}
-
 		local my_lualine_theme = {
 			normal = {
 				a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
@@ -53,6 +52,9 @@ return {
 		lualine.setup({
 			options = {
 				-- theme = my_lualine_theme,
+				component_separators = "",
+				-- section_separators = "",
+				section_separators = { left = "", right = "" },
 				theme = "auto",
 			},
 			sections = {

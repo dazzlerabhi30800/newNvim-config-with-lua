@@ -1,12 +1,11 @@
 return {
-	-- {
-	-- 	"craftzdog/solarized-osaka.nvim",
+	-- { "craftzdog/solarized-osaka.nvim",
 	-- 	lazy = false,
 	-- 	priority = 1000,
 	-- 	config = function()
 	-- 		vim.cmd([[colorscheme solarized-osaka]])
 	-- 		require("solarized-osaka").setup({
-	--        style="night",
+	-- 			style = "night",
 	-- 			transparent = true,
 	-- 			lualine_bold = true,
 	-- 		})
@@ -17,40 +16,42 @@ return {
 	-- 			})
 	-- 		end
 	-- 		require("solarized-osaka").load()
-	-- 		vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+	-- 		-- vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 	-- 	end,
 	-- },
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("catppuccin").setup({
-	-- 			flavour = "mocha",
-	-- 			transparent_background = true,
-	-- 			styles = {
-	-- 				-- functions = { "italic" },
-	-- 				-- types = { "italic" },
-	-- 			},
-	-- 		})
-	-- 		if vim.g.neovide == true then
-	-- 			require("catppuccin").setup({
-	-- 				transparent_background = false,
-	-- 				background = {
-	-- 					dark = "mocha",
-	-- 				},
-	-- 				color_overrides = {
-	-- 					all = {
-	-- 						-- base = "#181A27",
-	-- 						base = "#232639",
-	-- 					},
-	-- 				},
-	-- 			})
-	-- 		end
-	-- 		require("catppuccin").load()
-	-- 		vim.cmd([[colorscheme catppuccin]])
-	-- 	end,
-	-- },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha",
+				transparent_background = true,
+				styles = {
+					functions = { "italic" },
+					types = { "italic" },
+				},
+			})
+			if vim.g.neovide == true then
+				require("catppuccin").setup({
+					transparent_background = false,
+					background = {
+						dark = "mocha",
+					},
+					color_overrides = {
+						all = {
+							-- base = "#181A27",
+							base = "#232639",
+						},
+					},
+				})
+			end
+			require("catppuccin").load()
+			vim.cmd([[colorscheme catppuccin]])
+			vim.cmd([[highlight CursorLine  guibg=#2e2e41 ctermbg=darkblue]])
+		end,
+	},
 	-- {
 	--   "rebelot/kanagawa.nvim",
 	--   name = "kanagawa",
@@ -85,58 +86,72 @@ return {
 	-- 	end,
 	-- },
 	-- {
-	-- 	"askfiy/visual_studio_code",
-	-- 	priority = 10000,
-	-- 	lazy = false,
-	-- 	config = function()
-	-- 		require("visual_studio_code").setup({
-	-- 			mode = "dark",
-	-- 			preset = true,
-	-- 			transparent = true,
-	-- 		})
-	-- 		vim.cmd([[colorscheme visual_studio_code]])
-	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#69696B", italic = true })
-	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
-	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
-	-- 	end,
-	-- },
-	{
-		"Mofiqul/vscode.nvim",
-		priority = 1000,
-		lazy = false,
-		config = function()
-			require("vscode").setup({
-				transparent = true,
-				italic_comments = true,
-				color_overrides = {
-					vscGreen = "#69696B",
-				},
-			})
-			if vim.g.neovide == true then
-				require("vscode").setup({
-					transparent = false,
-				})
-			end
-			require("vscode").load()
-			vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
-			vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
-		end,
-	},
-	-- {
-	-- 	"folke/tokyonight.nvim",
+	-- 	"Mofiqul/vscode.nvim",
 	-- 	priority = 1000,
 	-- 	lazy = false,
 	-- 	config = function()
-	-- 		require("tokyonight").setup({
-	-- 			style = "storm",
+	-- 		require("vscode").setup({
 	-- 			transparent = true,
-	-- 			comments = { italic = true },
-	-- 			keywords = { italic = true },
-	--        on_highlights = function(hl)
-	--
-	--        end
+	-- 			italic_comments = true,
+	-- 			color_overrides = {
+	-- 				vscGreen = "#69696B",
+	-- 			},
 	-- 		})
-	--      require("tokyonight").load()
+	-- 		if vim.g.neovide == true then
+	-- 			require("vscode").setup({
+	-- 				transparent = false,
+	-- 			})
+	-- 		end
+	-- 		require("vscode").load()
+	-- 		-- vim.cmd([[highlight CursorLine  guibg="none" ctermbg=darkblue]])
+	-- 		vim.cmd([[highlight CursorLine  guibg=none ctermbg=darkblue]])
+	--      vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#F9BF40", bold = true, italic = true })
+	-- 		-- vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
+	-- 	end,
+	-- },
+	-- {
+	-- 	"nyoom-engineering/oxocarbon.nvim",
+	-- 	priority = 1000,
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme oxocarbon")
+	-- 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	-- 		vim.cmd([[highlight CursorLine  guibg=none ctermbg=darkblue]])
+	--      vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#F9BF40", bold = true, italic = true })
+	-- 	end,
+	-- },
+	-- {
+	-- 	"EdenEast/nightfox.nvim",
+	-- 	priority = 1000,
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		require("nightfox").setup({
+	-- 			options = {
+	-- 				transparent = true,
+	-- 				comments = "italic",
+	-- 				keywords = "bold",
+	-- 				types = "italic,bold",
+	-- 			},
+	-- 		})
+	-- 		require("nightfox").load()
+	-- 		vim.cmd("colorscheme nightfox")
+	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40", bold = true, italic = true })
+	-- 	end,
+	-- },
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	priority = 1000,
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		require("gruvbox").setup({
+	-- 			italics = {
+	-- 				operators = true,
+	-- 			},
+	-- 			transparent_mode = true,
+	-- 		})
+	--      vim.cmd("colorscheme gruvbox")
 	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 	-- 	end,

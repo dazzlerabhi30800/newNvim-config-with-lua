@@ -11,13 +11,16 @@ return {
 			require("ibl").setup({
 				indent = {
 					char = "┊",
-					highlight = { "Whitespace", "CursorColumn", "Function", "Label" },
+					-- highlight = { "Whitespace", "CursorColumn", "Function", "Label", "NonText" },
 					-- highlight = { "Whitespace", "CursorColumn" },
 				},
-				-- whitespace = {
-				-- 	highlight = "IblWhitespace",
-				-- 	remove_blankline_trail = true,
-				-- },
+				scope = {
+					enabled = true,
+				},
+				whitespace = {
+					highlight = "IblWhitespace",
+					remove_blankline_trail = true,
+				},
 				-- scope = {
 				-- 	include = {
 				-- 		node_type = {

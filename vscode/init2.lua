@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 
 
-
 local menuBar = {
 	sideBar = function()
 		vim.fn.VSCodeNotify("workbench.action.toggleSidebarVisibility")
@@ -141,8 +140,9 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt_local.formatoptions:remove({ "r", "o" })
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 
-
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
+-- vim.opt.guicursor = "a:block-Cursor/lCursor"
 
 -- vim.keymap.set("n", "k", "gk", { noremap = true, silent = true })
 -- vim.keymap.set("n", "j", "gj", { noremap = true, silent = true })

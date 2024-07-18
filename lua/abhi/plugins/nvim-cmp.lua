@@ -22,10 +22,12 @@ return {
 		cmp.setup({
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
-				keyword_length = 20,
-				debounce = 150,
+				-- keyword_length = 20,
+				keyword_length = 3,
+        max_item_count = 3,
+        -- max_item_count = 5,
+				-- debounce = 150,
 				group_index = 1,
-				max_item_count = 30,
 			},
 			snippet = { -- configure how nvim-cmp interacts with snippet engine
 				expand = function(args)
@@ -45,9 +47,9 @@ return {
 			sources = cmp.config.sources({
 				{
 					name = "nvim_lsp",
-					keyword_length = 20,
+					keyword_length = 3,
 					group_index = 1,
-					max_item_count = 30,
+					-- max_item_count = 30,
 				}, -- lsp
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
