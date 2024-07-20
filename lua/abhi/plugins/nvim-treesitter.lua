@@ -17,6 +17,16 @@ return {
 					use_languagetree = true,
 				},
 
+				-- enable indentation
+				indent = { enable = true },
+
+				-- enable autotagging (w/ nvim-ts-autotag plugin)
+				require("nvim-ts-autotag").setup({
+					enable = true,
+				}),
+				-- autotag = {
+				-- },
+
 				-- ensure these language parsers are installed
 				ensure_installed = {
 					"json",
@@ -37,30 +47,6 @@ return {
 					"vim",
 					"dockerfile",
 					"gitignore",
-				},
-				-- enable indentation
-				indent = { enable = true },
-				-- enable autotagging (w/ nvim-ts-autotag plugin)
-
-				autotag = {
-					enable = true,
-					filetypes = {
-						"html",
-						"javascript",
-						"typescript",
-						"javascriptreact",
-						"typescriptreact",
-						"svelte",
-						"vue",
-						"tsx",
-						"jsx",
-						"rescript",
-						"css",
-						"lua",
-						"xml",
-						"php",
-						"markdown",
-					},
 				},
 				-- autotag = { enable = true },
 				-- ensure these language parsers are installed

@@ -81,7 +81,7 @@ vim.g.neovide_cursor_vfx_mode = "pixiedust"
 -- vim.g.neovide_floating_blur_amount_y = 10.0
 vim.g.neovide_cursor_trail_size = 0.2
 vim.g.neovide_cursor_vfx_opacity = 100.0
-vim.g.neovide_cursor_animation_length = 0.005
+vim.g.neovide_cursor_animation_length = 0.010
 vim.g.neovide_scroll_animation_length = 0.015
 vim.g.neovide_no_idle = 1
 
@@ -96,7 +96,7 @@ vim.lsp.set_log_level("off")
 -- vim.cmd([[hi normal guibg=NONE ctermbg=NONE]])
 if vim.g.neovide == true then
 	vim.g.neovide_background_color = "#0f1117"
-	vim.opt.guifont = { "Hack Nerd Font", ":h12" }
+	vim.opt.guifont = { "RobotoMono Nerd Font", ":h12" }
 	-- vim.opt.guifont = { "RobotoMono Nerd Font", ":h14" }
 	-- vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h14" }
 	-- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver5,r-cr:ver5,o:ver5"
@@ -109,6 +109,6 @@ if vim.g.neovide == true then
 
 	-- Set line height
 	-- vim.api.nvim_win_set_option(0, "winhl", "Normal:CursorLine:Normal", "winblend=2") -- Adjust the 'winblend' value as needed
-	vim.opt.linespace = 2
+	vim.opt.linespace = 0
 	-- opt.guicursor = "a:block-Cursor/lCursor"
 end

@@ -34,6 +34,7 @@ return {
 				"quick_lint_js",
 				"jsonls",
 				"lua_ls",
+        -- "emmet_ls",
 				"astro",
 			},
 			-- auto-install configured servers (with lspconfig)
