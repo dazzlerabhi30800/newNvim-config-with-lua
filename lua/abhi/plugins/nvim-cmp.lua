@@ -23,7 +23,7 @@ return {
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
 				-- keyword_length = 20,
-				keyword_length = 3,
+				keyword_length = 5,
         max_item_count = 3,
         -- max_item_count = 5,
 				-- debounce = 150,
@@ -47,7 +47,7 @@ return {
 			sources = cmp.config.sources({
 				{
 					name = "nvim_lsp",
-					keyword_length = 3,
+					keyword_length = 5,
 					group_index = 1,
 					-- max_item_count = 30,
 				}, -- lsp

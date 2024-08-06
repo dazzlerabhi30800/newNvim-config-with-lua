@@ -16,8 +16,8 @@ return {
 	-- 			})
 	-- 		end
 	-- 		require("solarized-osaka").load()
-	-- 		-- vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
-	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+	-- 		vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+ --      -- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 	-- 	end,
 	-- },
 	{
@@ -29,8 +29,8 @@ return {
 				flavour = "mocha",
 				transparent_background = true,
 				styles = {
-					functions = { "italic" },
-					types = { "italic" },
+					-- functions = { "italic" },
+					-- types = { "italic" },
 				},
 			})
 			if vim.g.neovide == true then
