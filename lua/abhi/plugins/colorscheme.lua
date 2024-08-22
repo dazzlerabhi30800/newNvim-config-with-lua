@@ -1,25 +1,26 @@
 return {
-	{ "craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme solarized-osaka]])
-			require("solarized-osaka").setup({
-				style = "night",
-				transparent = true,
-				lualine_bold = true,
-			})
-			if vim.g.neovide == true then
-				require("solarized-osaka").setup({
-					transparent = false,
-					day_brightness = 0.9,
-				})
-			end
-			require("solarized-osaka").load()
-			vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
-      -- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
-		end,
-	},
+	-- {
+	-- 	"craftzdog/solarized-osaka.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme solarized-osaka]])
+	-- 		require("solarized-osaka").setup({
+	-- 			style = "night",
+	-- 			transparent = true,
+	-- 			lualine_bold = true,
+	-- 		})
+	-- 		if vim.g.neovide == true then
+	-- 			require("solarized-osaka").setup({
+	-- 				transparent = false,
+	-- 				day_brightness = 0.9,
+	-- 			})
+	-- 		end
+	-- 		require("solarized-osaka").load()
+	-- 		vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+	-- 		-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+	-- 	end,
+	-- },
 	-- {
 	-- 	"catppuccin/nvim",
 	-- 	name = "catppuccin",
@@ -156,4 +157,26 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 	-- 	end,
 	-- },
+	{
+		"slugbyte/lackluster.nvim",
+		lazy = false,
+		priority = 1000,
+		init = function()
+			require("lackluster").setup({
+				tweak_background = {
+					normal = "none",
+				},
+			})
+			vim.cmd.colorscheme("lackluster")
+			require("lackluster").load()
+			vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+		end,
+	},
+	-- {
+ --    "AmberLehmann/candyland.nvim",
+ --    priority = 1000,
+ --    config = function()
+	-- 		vim.cmd.colorscheme("candyland")
+ --    end
+ --  },
 }
