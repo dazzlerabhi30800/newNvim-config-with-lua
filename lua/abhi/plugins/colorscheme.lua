@@ -70,22 +70,22 @@ return {
 	-- 	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 	--   end
 	-- },
-	-- {
-	-- 	"bluz71/vim-nightfly-colors",
-	-- 	name = "nightfly",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.g.nightflyCursor = true
-	-- 		vim.g.nightflyTransparent = true
-	-- 		if vim.g.neovide == true then
-	-- 			vim.g.nightflyTransparent = false
-	-- 		end
-	-- 		vim.cmd([[colorscheme nightfly]])
-	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
-	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
-	-- 	end,
-	-- },
+	{
+		"bluz71/vim-nightfly-colors",
+		name = "nightfly",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.nightflyCursor = true
+			vim.g.nightflyTransparent = true
+			if vim.g.neovide == true then
+				vim.g.nightflyTransparent = false
+			end
+			vim.cmd([[colorscheme nightfly]])
+			vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+			vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
+		end,
+	},
 	-- {
 	-- 	"Mofiqul/vscode.nvim",
 	-- 	priority = 1000,
@@ -105,9 +105,10 @@ return {
 	-- 		end
 	-- 		require("vscode").load()
 	-- 		-- vim.cmd([[highlight CursorLine  guibg="none" ctermbg=darkblue]])
-	-- 		vim.cmd([[highlight CursorLine  guibg=none ctermbg=darkblue]])
-	--      vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#F9BF40", bold = true, italic = true })
-	-- 		-- vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
+	-- 		-- vim.cmd([[highlight CursorLine  guibg=none ctermbg=darkblue]])
+	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+ --      vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
+	--      -- vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#F9BF40", bold = true, italic = true })
 	-- 	end,
 	-- },
 	-- {
@@ -157,21 +158,21 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 	-- 	end,
 	-- },
-	{
-		"slugbyte/lackluster.nvim",
-		lazy = false,
-		priority = 1000,
-		init = function()
-			require("lackluster").setup({
-				tweak_background = {
-					normal = "none",
-				},
-			})
-			vim.cmd.colorscheme("lackluster")
-			require("lackluster").load()
-			vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
-		end,
-	},
+	-- {
+	-- 	"slugbyte/lackluster.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	init = function()
+	-- 		require("lackluster").setup({
+	-- 			tweak_background = {
+	-- 				normal = "none",
+	-- 			},
+	-- 		})
+	-- 		require("lackluster").load()
+	-- 		vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+ --      vim.cmd.colorscheme("lackluster-night")
+	-- 	end,
+	-- },
 	-- {
  --    "AmberLehmann/candyland.nvim",
  --    priority = 1000,

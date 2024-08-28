@@ -116,3 +116,11 @@ vim.api.nvim_set_keymap("t", "<C-j>", "<C-\\><C-N><C-w>h", { noremap = true, sil
 
 -- Move to the terminal on the right of the current split
 vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-N><C-w>l", { noremap = true, silent = true })
+
+
+
+-- keymap.set("n", "<leader>r", function()
+-- 	-- require("abhi.hsl").replaceHexWithHSL()
+-- 	-- require("abhi.hsl").hex_to_rgb()
+-- 	require("abhi.hsl").hex_to_rgb()
+-- end)
