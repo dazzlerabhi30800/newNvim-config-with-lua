@@ -24,8 +24,8 @@ return {
 				completeopt = "menu,menuone,preview,noselect",
 				-- keyword_length = 20,
 				keyword_length = 5,
-        max_item_count = 3,
-        -- max_item_count = 5,
+				max_item_count = 3,
+				-- max_item_count = 5,
 				-- debounce = 150,
 				group_index = 1,
 			},
@@ -54,11 +54,14 @@ return {
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
+				{ name = "codeium" },
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
 				format = lspkind.cmp_format({
 					maxwidth = 50,
+					mode = "symbol",
+					symbol_map = { Codeium = "" },
 					ellipsis_char = "...",
 				}),
 			},

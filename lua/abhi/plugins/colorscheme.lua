@@ -21,38 +21,38 @@ return {
 	-- 		-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 	-- 	end,
 	-- },
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("catppuccin").setup({
-	-- 			flavour = "mocha",
-	-- 			transparent_background = true,
-	-- 			styles = {
-	-- 				-- functions = { "italic" },
-	-- 				-- types = { "italic" },
-	-- 			},
-	-- 		})
-	-- 		if vim.g.neovide == true then
-	-- 			require("catppuccin").setup({
-	-- 				transparent_background = false,
-	-- 				background = {
-	-- 					dark = "mocha",
-	-- 				},
-	-- 				color_overrides = {
-	-- 					all = {
-	-- 						-- base = "#181A27",
-	-- 						base = "#232639",
-	-- 					},
-	-- 				},
-	-- 			})
-	-- 		end
-	-- 		require("catppuccin").load()
-	-- 		vim.cmd([[colorscheme catppuccin]])
-	-- 		vim.cmd([[highlight CursorLine  guibg=#2e2e41 ctermbg=darkblue]])
-	-- 	end,
-	-- },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha",
+				transparent_background = true,
+				styles = {
+					-- functions = { "italic" },
+					-- types = { "italic" },
+				},
+			})
+			if vim.g.neovide == true then
+				require("catppuccin").setup({
+					transparent_background = false,
+					background = {
+						dark = "mocha",
+					},
+					color_overrides = {
+						all = {
+							-- base = "#181A27",
+							base = "#232639",
+						},
+					},
+				})
+			end
+			require("catppuccin").load()
+			vim.cmd([[colorscheme catppuccin]])
+			vim.cmd([[highlight CursorLine  guibg=#2e2e41 ctermbg=darkblue]])
+		end,
+	},
 	-- {
 	--   "rebelot/kanagawa.nvim",
 	--   name = "kanagawa",
@@ -70,22 +70,22 @@ return {
 	-- 	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 	--   end
 	-- },
-	{
-		"bluz71/vim-nightfly-colors",
-		name = "nightfly",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.g.nightflyCursor = true
-			vim.g.nightflyTransparent = true
-			if vim.g.neovide == true then
-				vim.g.nightflyTransparent = false
-			end
-			vim.cmd([[colorscheme nightfly]])
-			vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
-			vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
-		end,
-	},
+	-- {
+	-- 	"bluz71/vim-nightfly-colors",
+	-- 	name = "nightfly",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.g.nightflyCursor = true
+	-- 		vim.g.nightflyTransparent = true
+	-- 		if vim.g.neovide == true then
+	-- 			vim.g.nightflyTransparent = false
+	-- 		end
+	-- 		vim.cmd([[colorscheme nightfly]])
+	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
+	-- 	end,
+	-- },
 	-- {
 	-- 	"Mofiqul/vscode.nvim",
 	-- 	priority = 1000,

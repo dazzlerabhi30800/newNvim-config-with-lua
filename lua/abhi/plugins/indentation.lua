@@ -19,7 +19,8 @@ return {
 			}
 			--
 			local hooks = require("ibl.hooks")
-			local color = "#4F4F4F"
+			-- local color = "#4F4F4F"
+			local color = "#373737"
 			-- create the highlight groups in the highlight setup hook, so they are reset
 			-- every time the colorscheme changes
 			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
