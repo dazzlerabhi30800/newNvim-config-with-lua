@@ -62,7 +62,7 @@ opt.iskeyword:append("-") -- set cursor to line on insert mode
 -- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor10,r-cr:hor10,o:hor10"
 -- opt.guicursor = "a:hor-10/lCursor"
 -- opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:hor10,r-cr:hor10,o:hor10"
-opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"
+-- opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"
 -- opt.guicursor = "v-i-r-cr-ci-c:block-Cursor/lCursor,n-cr:hor10"
 -- opt.guicursor = "n-v-c:blinkon0-Cursor/lCursor,i-cr:block-cursor,r-cr:block-cursor,o:ver20" --
 -- cursor line options
@@ -99,7 +99,8 @@ vim.lsp.set_log_level("off")
 -- vim.cmd([[hi normal guibg=NONE ctermbg=NONE]])
 if vim.g.neovide == true then
 	vim.g.neovide_background_color = "#0f1117"
-	vim.opt.guifont = { "SpaceMono Nerd Font", ":h12" }
+	-- vim.opt.guifont = { "SpaceMono Nerd Font", ":h12" }
+	vim.opt.guifont = { "RecMonoSmCasual Nerd Font", ":h12" }
 	-- vim.opt.guifont = { "Hack Nerd Font", ":h14" }
 	-- vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h14" }
   opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"

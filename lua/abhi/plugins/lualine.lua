@@ -54,8 +54,8 @@ return {
 			options = {
 				-- theme = my_lualine_theme,
 				theme = "auto",
-				-- section_separators = "",
-				section_separators = { left = "", right = "" },
+				section_separators = "",
+				-- section_separators = { left = "", right = "" },
 				-- section_separators = { left = "", right = "" },
 				-- component_separators = { left = "", right = "" },
 				-- component_separators = { left = "", right = "" },

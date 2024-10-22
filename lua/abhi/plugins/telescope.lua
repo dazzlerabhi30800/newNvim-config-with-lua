@@ -30,11 +30,17 @@ return {
 
 		telescope.setup({
 			defaults = {
-				file_ignore_patterns = { "node_modules", ".git" },
+				file_ignore_patterns = { "node_modules" },
 				mappings = {
 					n = {
 						["q"] = actions.close,
 					},
+				},
+				find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git" },
+			},
+			picker = {
+				find_files = {
+					hidden = true,
 				},
 			},
 			extensions = {
