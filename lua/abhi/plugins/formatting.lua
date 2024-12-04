@@ -8,8 +8,8 @@ return {
 			formatters_by_ft = {
 				javascript = { "prettier" },
 				typescript = { "prettier" },
-				javascriptreact = { "prettier", "prettierd" },
-				typescriptreact = { "prettier", "prettierd" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
 				svelte = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },

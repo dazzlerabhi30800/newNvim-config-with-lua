@@ -62,7 +62,8 @@ opt.iskeyword:append("-") -- set cursor to line on insert mode
 -- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor10,r-cr:hor10,o:hor10"
 -- opt.guicursor = "a:hor-10/lCursor"
 -- opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:hor10,r-cr:hor10,o:hor10"
--- opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"
+-- opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:hor20,r-cr:hor20,o:hor20"
+opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"
 -- opt.guicursor = "v-i-r-cr-ci-c:block-Cursor/lCursor,n-cr:hor10"
 -- opt.guicursor = "n-v-c:blinkon0-Cursor/lCursor,i-cr:block-cursor,r-cr:block-cursor,o:ver20" --
 -- cursor line options
@@ -84,7 +85,7 @@ vim.g.neovide_cursor_vfx_mode = "pixiedust"
 -- vim.g.neovide_floating_blur_amount_y = 10.0
 vim.g.neovide_cursor_trail_size = 0.2
 vim.g.neovide_cursor_vfx_opacity = 100.0
-vim.g.neovide_cursor_animation_length = 0.004
+vim.g.neovide_cursor_animation_length = 0.02
 vim.g.neovide_scroll_animation_length = 0.015
 vim.g.neovide_no_idle = 1
 
@@ -99,14 +100,11 @@ vim.lsp.set_log_level("off")
 -- vim.cmd([[hi normal guibg=NONE ctermbg=NONE]])
 if vim.g.neovide == true then
 	vim.g.neovide_background_color = "#0f1117"
-	-- vim.opt.guifont = { "SpaceMono Nerd Font", ":h12" }
-	vim.opt.guifont = { "RecMonoSmCasual Nerd Font", ":h12" }
-	-- vim.opt.guifont = { "Hack Nerd Font", ":h14" }
-	-- vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h14" }
-  opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"
+	vim.opt.guifont = { "FiraCode Nerd Font", ":h12" }
+	-- opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"
 	-- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver20,r-cr:ver20,o:ver20"
 	-- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor10,r-cr:hor10,o:hor10"
-	-- opt.guicursor = "a:block-Cursor/lCursor"
+	opt.guicursor = "a:block-Cursor/lCursor"
 	vim.g.neovide_padding_top = 10
 	vim.g.neovide_padding_bottom = 10
 	vim.g.neovide_padding_right = 10
@@ -115,6 +113,6 @@ if vim.g.neovide == true then
 
 	-- Set line height
 	-- vim.api.nvim_win_set_option(0, "winhl", "Normal:CursorLine:Normal", "winblend=2") -- Adjust the 'winblend' value as needed
-	vim.opt.linespace = 0
+	vim.opt.linespace = 2
 	-- opt.guicursor = "a:block-Cursor/lCursor"
 end

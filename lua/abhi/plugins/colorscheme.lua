@@ -9,15 +9,20 @@ return {
 	-- 			style = "night",
 	-- 			transparent = true,
 	-- 			lualine_bold = true,
+	-- 			night_brightness= 0.9,
+	-- 			functions = { italic = true },
+	-- 			variables = { italic = true },
 	-- 		})
 	-- 		if vim.g.neovide == true then
 	-- 			require("solarized-osaka").setup({
-	-- 				transparent = false,
+	-- 				transparent = true,
+	-- 				-- transparent = false,
 	-- 				day_brightness = 0.9,
 	-- 			})
 	-- 		end
 	-- 		require("solarized-osaka").load()
 	-- 		vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
+	-- 		-- vim.api.nvim_set_hl(0, "Cursor", { bg = "#e80674", fg = "none" })
 	-- 		-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 	-- 	end,
 	-- },
@@ -30,8 +35,8 @@ return {
 	-- 			flavour = "mocha",
 	-- 			transparent_background = true,
 	-- 			styles = {
-	-- 				-- functions = { "italic" },
-	-- 				-- types = { "italic" },
+	-- 				functions = { "italic" },
+	-- 				types = { "italic" },
 	-- 			},
 	-- 		})
 	-- 		if vim.g.neovide == true then
@@ -104,9 +109,12 @@ return {
 	-- 				transparent = false,
 	-- 			})
 	-- 		end
-	-- 		require("vscode").load()
-	-- 		-- vim.cmd([[highlight CursorLine  guibg="none" ctermbg=darkblue]])
-	-- 		-- vim.cmd([[highlight CursorLine  guibg=none ctermbg=darkblue]])
+	-- 		-- require("vscode").load()
+	--
+	-- 		vim.cmd("colorscheme wildcharm")
+	-- 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- 		vim.api.nvim_set_hl(0, "Cursor", { bg = "#8740f8", fg = "#ffffff" })
+	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 	-- 		-- vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#F9BF40", bold = true, italic = true })
@@ -186,17 +194,33 @@ return {
 	-- 		vim.cmd([[highlight CursorLine  guibg=#222A2E ctermbg=darkblue]])
 	-- 	end,
 	-- },
+	-- {
+	-- 	"chriskempson/base16-vim",
+	-- 	lazy = false,
+	-- 	priority = 10000,
+	-- 	config = function()
+	-- 		vim.cmd([[ colorscheme base16-default-dark]])
+	-- 		vim.cmd([[highlight CursorLine  guibg=#2e2d2d ctermbg=darkblue]])
+	-- 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	-- 		vim.api.nvim_set_hl(0, "StartifyHeader", { bg = "none" })
+	-- 		vim.cmd("highlight SignColumn guibg=none")
+	-- 	end,
+	-- },
 	{
-		"chriskempson/base16-vim",
+		"folke/tokyonight.nvim",
 		lazy = false,
-		priority = 10000,
+		priority = 1000,
+		opts = {},
 		config = function()
-			vim.cmd([[ colorscheme base16-default-dark]])
-			vim.cmd([[highlight CursorLine  guibg=#2e2d2d ctermbg=darkblue]])
-			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-			vim.api.nvim_set_hl(0, "StartifyHeader", { bg = "none" })
-			vim.cmd("highlight SignColumn guibg=none")
+			require("tokyonight").setup({
+				style = "night",
+				transparent = true,
+				styles = {
+					functions = { italic = true },
+				},
+			})
+			vim.cmd([[colorscheme tokyonight-moon]])
 		end,
 	},
 }

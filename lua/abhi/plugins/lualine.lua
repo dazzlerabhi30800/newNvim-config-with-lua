@@ -23,9 +23,10 @@ return {
 				c = { bg = colors.black, fg = colors.fg },
 			},
 			insert = {
-				a = { bg = colors.fg, fg = colors.inactive_bg, gui = "bold" },
-				b = { bg = colors.bg, fg = colors.red },
-				c = { bg = colors.black, fg = colors.fg },
+				-- a = { bg = colors.fg, fg = colors.inactive_bg, gui = "bold" },
+				a = { bg = colors.red, fg = colors.black, gui = "bold" },
+				b = { bg = colors.bg, fg = colors.fg},
+				c = { bg = colors.black, fg = colors.fg},
 			},
 			visual = {
 				a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
@@ -73,7 +74,8 @@ return {
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
-						color = { fg = "#ff9e64" },
+						-- color = { fg = "#ff9e64" },
+						color = { fg = "#000000", bg = "#ffffff" },
 					},
 					-- { "encoding" },
 					-- { "fileformat" },
