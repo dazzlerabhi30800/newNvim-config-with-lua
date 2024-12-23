@@ -4,7 +4,6 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local todo_comments = require("todo-comments")
-
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
@@ -16,6 +15,18 @@ return {
 			todo_comments.jump_prev()
 		end, { desc = "Previous todo comment" })
 
-		todo_comments.setup()
+		todo_comments.setup({
+			keywords = {
+				NOTE = { icon = " ", color = "#10B981" },
+			},
+			-- colors = {
+			-- 	error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+			-- 	warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+			-- 	info = { "DiagnosticInfo", "#2563EB" },
+			-- 	hint = { "DiagnosticHint", "#10B981" },
+			-- 	default = { "Identifier", "#7C3AED" },
+			-- 	test = { "Identifier", "#FF00FF" },
+			-- },
+		})
 	end,
 }

@@ -92,34 +92,34 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
 	-- 	end,
 	-- },
-	-- {
-	-- 	"Mofiqul/vscode.nvim",
-	-- 	priority = 1000,
-	-- 	lazy = false,
-	-- 	config = function()
-	-- 		require("vscode").setup({
-	-- 			transparent = true,
-	-- 			italic_comments = true,
-	-- 			color_overrides = {
-	-- 				vscGreen = "#69696B",
-	-- 			},
-	-- 		})
-	-- 		if vim.g.neovide == true then
-	-- 			require("vscode").setup({
-	-- 				transparent = false,
-	-- 			})
-	-- 		end
-	-- 		-- require("vscode").load()
-	--
-	-- 		vim.cmd("colorscheme wildcharm")
-	-- 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	-- 		vim.api.nvim_set_hl(0, "Cursor", { bg = "#8740f8", fg = "#ffffff" })
-	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-	-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
-	-- 		vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40" })
-	-- 		-- vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#F9BF40", bold = true, italic = true })
-	-- 	end,
-	-- },
+	{
+		"Mofiqul/vscode.nvim",
+		priority = 1000,
+		lazy = false,
+		config = function()
+			require("vscode").setup({
+				transparent = true,
+				italic_comments = true,
+				color_overrides = {
+					vscGreen = "#5a7e4e",
+				},
+			})
+			if vim.g.neovide == true then
+				require("vscode").setup({
+					transparent = false,
+				})
+			end
+			require("vscode").load()
+
+			-- vim.cmd("colorscheme wildcharm")
+			-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "Cursor", { bg = "#8740f8", fg = "#ffffff" })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+			vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
+			vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#30333B", fg = "#F9BF40", bold = true })
+			-- vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#F9BF40", bold = true, italic = true })
+		end,
+	},
 	-- {
 	-- 	"nyoom-engineering/oxocarbon.nvim",
 	-- 	priority = 1000,
@@ -207,20 +207,25 @@ return {
 	-- 		vim.cmd("highlight SignColumn guibg=none")
 	-- 	end,
 	-- },
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-		config = function()
-			require("tokyonight").setup({
-				style = "night",
-				transparent = true,
-				styles = {
-					functions = { italic = true },
-				},
-			})
-			vim.cmd([[colorscheme tokyonight-moon]])
-		end,
-	},
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		require("tokyonight").setup({
+	-- 			style = "night",
+	-- 			transparent = true,
+	-- 			styles = {
+	-- 				functions = {},
+	-- 				keywords = { italic = false },
+	-- 				comments = { italic = false },
+	-- 			},
+	-- 		})
+	-- 		vim.cmd([[colorscheme tokyonight-moon]])
+	-- 		if vim.g.neovide == true then
+	-- 			vim.api.nvim_set_hl(0, "Normal", { bg = "#1E1C24" })
+	-- 		end
+	-- 	end,
+	-- },
 }
