@@ -9,9 +9,9 @@ return {
 	-- 			style = "night",
 	-- 			transparent = true,
 	-- 			lualine_bold = true,
-	-- 			night_brightness= 0.9,
-	-- 			functions = { italic = true },
-	-- 			variables = { italic = true },
+	-- 			night_brightness = 0.9,
+	-- 			functions = { italic = false },
+	-- 			variables = { italic = false },
 	-- 		})
 	-- 		if vim.g.neovide == true then
 	-- 			require("solarized-osaka").setup({
@@ -226,6 +226,24 @@ return {
 	-- 		if vim.g.neovide == true then
 	-- 			vim.api.nvim_set_hl(0, "Normal", { bg = "#1E1C24" })
 	-- 		end
+	-- 	end,
+	-- },
+	-- {
+	-- 	"projekt0n/github-nvim-theme",
+	-- 	name = "github-theme",
+	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		require("github-theme").setup({
+	-- 			options = {
+	-- 				transparent = true,
+	-- 				styles = {
+	-- 					comments = "italic,bold",
+	-- 					functions = "italic",
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 		vim.cmd("colorscheme github_dark")
 	-- 	end,
 	-- },
 }

@@ -28,6 +28,8 @@ return {
 
 		local fb_actions = require("telescope").extensions.file_browser.actions
 
+		require("telescope").load_extension("fzf")
+
 		telescope.setup({
 			defaults = {
 				file_ignore_patterns = { "node_modules", ".git" },
@@ -35,6 +37,21 @@ return {
 					n = {
 						["q"] = actions.close,
 					},
+				},
+				find_command = { "rg", "--files", "--no-ignore", "--hidden", "--" },
+				path_display = function(_, path)
+					return string.gsub(path, "[(]", "\\("):gsub("[)]", "\\)")
+				end,
+
+				vimgrep_arguements = {
+					"rg",
+					"--color=never",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
+					"--",
 				},
 			},
 			extensions = {
@@ -66,7 +83,7 @@ return {
 
 		vim.keymap.set("n", ",f", function()
 			builtin.find_files({
-				no_ignore = false,
+				no_ignore = true,
 				hidden = true,
 			})
 		end)
@@ -97,5 +114,9 @@ return {
 				layout_config = { height = 40 },
 			})
 		end)
+
+		pcall(require("telescope").load_extension, "fzf")
+		pcall(require("telescope").load_extension, "ui-select")
+		pcall(require("telescope").load_extension, "live_grep_args")
 	end,
 }
