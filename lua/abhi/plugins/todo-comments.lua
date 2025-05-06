@@ -19,14 +19,14 @@ return {
 			keywords = {
 				NOTE = { icon = " ", color = "#10B981" },
 			},
-			-- colors = {
-			-- 	error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
-			-- 	warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-			-- 	info = { "DiagnosticInfo", "#2563EB" },
-			-- 	hint = { "DiagnosticHint", "#10B981" },
-			-- 	default = { "Identifier", "#7C3AED" },
-			-- 	test = { "Identifier", "#FF00FF" },
-			-- },
+			colors = {
+				info = { "DiagnosticInfo", "#2563EB" },
+				-- error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+				-- warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+				-- hint = { "DiagnosticHint", "#10B981" },
+				-- default = { "Identifier", "#7C3AED" },
+				-- test = { "Identifier", "#FF00FF" },
+			},
 		})
 	end,
 }

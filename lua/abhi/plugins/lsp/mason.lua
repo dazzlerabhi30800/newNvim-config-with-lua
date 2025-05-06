@@ -28,15 +28,14 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"ts_ls",
-				-- "tsserver",
 				"html",
 				"cssls",
 				"quick_lint_js",
 				"jsonls",
 				"lua_ls",
-        -- "emmet_ls",
-				"astro",
+				-- "astro",
+				"ts_ls",
+				-- "emmet_ls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -46,9 +45,9 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint", -- python linter
+				-- "isort", -- python formatter
+				-- "black", -- python formatter
+				-- "pylint", -- python linter
 				"eslint_d", -- js linter
 			},
 		})

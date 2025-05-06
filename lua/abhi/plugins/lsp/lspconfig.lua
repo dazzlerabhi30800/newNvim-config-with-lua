@@ -59,6 +59,7 @@ return {
 
 			opts.desc = "Show documentation for what is under cursor"
 			keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+			keymap.set("n", "<leader>K", vim.lsp.buf.type_definition, opts) -- show documentation for what is under cursor
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
@@ -82,11 +83,16 @@ return {
 			-- filetypes = { "*" },
 		})
 
-    -- lspconfig["tsserver"].setup({
-		-- configure typescript server with plugin
-      lspconfig["ts_ls"].setup({
+		-- lspconfig.ts_ls.setup({
+		-- 	capabilities = capabilities,
+		-- 	-- on_attach = on_attach,
+		-- })
+
+		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+			root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json"),
 		})
 
 		-- configure emmet server
@@ -96,30 +102,32 @@ return {
 		-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		-- })
 
-		lspconfig.astro.setup({
-			-- init_options = {
-			-- 	typescript = {
-			-- 		server_path = vim.fs.normalize(
-			-- 			"~/AppData/Roaming/npm/node_modules/typescript/lib/tsserverlibrary.js"
-			-- 		),
-			-- 	},
-			-- },
-		})
+		-- typescript.setup({
+		-- 	disable_commands = false,
+		-- 	debug = false,
+		-- 	go_to_source_definition = {
+		-- 		fallback = true,
+		-- 	},
+		-- 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+		-- 	root_dir = function()
+		-- 		return vim.loop.cwd()
+		-- 	end,
+		-- 	-- root_dir = require("lspconfig").util.root_pattern("package.json"),
+		-- 	server = {
+		-- 		capabilities = capabilities,
+		-- 		on_attach = on_attach,
+		-- 	},
+		-- })
 
+		--NOTE: it will not throw a error
 		typescript.setup({
 			disable_commands = false,
 			debug = false,
-			go_to_source_definition = {
-				fallback = true,
-			},
-			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-			root_dir = function()
-				return vim.loop.cwd()
-			end,
-			-- root_dir = require("lspconfig").util.root_pattern("package.json"),
 			server = {
 				capabilities = capabilities,
 				on_attach = on_attach,
+				filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+				root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json"),
 			},
 		})
 
@@ -183,10 +191,4 @@ return {
 --   capabilities = capabilities,
 --   on_attach = on_attach,
 --   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
--- })
-
--- configure python server
--- lspconfig["pyright"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
 -- })

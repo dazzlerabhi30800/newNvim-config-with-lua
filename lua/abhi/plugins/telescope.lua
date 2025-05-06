@@ -27,21 +27,33 @@ return {
 		end
 
 		local fb_actions = require("telescope").extensions.file_browser.actions
+		-- local action_state = require("telescope.actions.state")
 
 		require("telescope").load_extension("fzf")
 
 		telescope.setup({
 			defaults = {
 				file_ignore_patterns = { "node_modules", ".git" },
-				mappings = {
-					n = {
-						["q"] = actions.close,
-					},
-				},
+				-- mappings = {
+				-- 	n = {
+				-- 		["q"] = actions.close,
+				-- 	},
+				-- 	i = {
+				-- 		["<CR>"] = function(prompt_bufnr)
+				-- 			local selection = action_state.get_selected_entry()
+				-- 			local raw_path = selection[1] -- Use the raw entry value
+				-- 			print("Selected path: " .. raw_path) -- Debug output
+				-- 			actions.close(prompt_bufnr)
+				-- 			vim.cmd("edit " .. vim.fn.fnameescape(raw_path)) -- Open the raw path
+				-- 		end,
+				-- 	},
+				-- },
 				find_command = { "rg", "--files", "--no-ignore", "--hidden", "--" },
-				path_display = function(_, path)
-					return string.gsub(path, "[(]", "\\("):gsub("[)]", "\\)")
-				end,
+				-- find_command = { "fd", "--type", "f", "--hidden", "--follow" },
+				-- path_display = function(_, path)
+				-- 	return string.gsub(path, "[(]", "\\("):gsub("[)]", "\\)")
+				-- end,
+				path_display = { "truncate" },
 
 				vimgrep_arguements = {
 					"rg",
@@ -52,6 +64,27 @@ return {
 					"--column",
 					"--smart-case",
 					"--",
+				},
+			},
+			pickers = {
+				find_files = {
+					-- Use ripgrep with proper path handling for parentheses
+					find_command = { "rg", "--files", "--glob", "!{.git/*,node_modules/*}", "--path-separator", "/" },
+					hidden = true, -- Include hidden files if needed
+				},
+				live_grep = {
+					-- Ensure live_grep also handles paths correctly
+					vimgrep_arguments = {
+						"rg",
+						"--color=never",
+						"--no-heading",
+						"--with-filename",
+						"--line-number",
+						"--column",
+						"--smart-case",
+						"--path-separator",
+						"/",
+					},
 				},
 			},
 			extensions = {
