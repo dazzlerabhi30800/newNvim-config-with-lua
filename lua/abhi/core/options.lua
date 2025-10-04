@@ -100,7 +100,8 @@ vim.g.neovide_no_idle = 1
 if vim.g.neovide == true then
 	vim.g.neovide_background_color = "#0f1117"
 	-- vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
-	vim.opt.guifont = { "Hack Nerd Font Propo", ":h12" }
+	-- vim.opt.guifont = { "Hack Nerd Font Propo", ":h12" }
+	vim.opt.guifont = { "GeistMono Nerd Font", ":h12" }
 	opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver20,r-cr:ver20,o:ver20"
 	-- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver20,r-cr:ver20,o:ver20"
 	-- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor10,r-cr:hor10,o:hor10"
@@ -120,3 +121,20 @@ end
 -- if vim.g.goneovim == true then
 -- 	vim.opt.linespace = 4
 -- end
+-- Set Nushell as the shell for Neovim
+vim.opt.shell = "nu"
+
+-- Required flags for correct shell command execution
+vim.opt.shellcmdflag = "--login --stdin --no-newline -c"
+
+-- Correctly handle shell redirects (for :! commands)
+vim.opt.shellredir = "out+err> %s"
+vim.opt.shellpipe = "| complete | update stderr { ansi strip } | tee { get stderr | save --force --raw %s } | into record"
+
+-- Disable temp files for shell commands
+vim.opt.shelltemp = false
+
+-- Remove shell quoting/escaping (avoid errors)
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""
+vim.opt.shellxescape = ""

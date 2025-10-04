@@ -11,8 +11,9 @@ return {
 	-- 			lualine_bold = true,
 	-- 			night_brightness = 0.9,
 	-- 			styles = {
-	-- 				functions = { italic = false },
+	-- 				functions = { italic = false, underdotted = true },
 	-- 				variables = { italic = false },
+	-- 				comments = { italic = false },
 	-- 				keywords = { italic = false, underdotted = true },
 	--
 	-- 				sidebars = "transparent",
@@ -32,49 +33,49 @@ return {
 	-- 		-- 		vim.cmd([[highlight CursorLine  guibg=#30333B ctermbg=darkblue]])
 	-- 	end,
 	-- },
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha",
-				transparent_background = true,
-				no_italic = true,
-				styles = {
-					comments = { "bold" },
-					conditionals = {},
-					loops = {},
-					functions = {},
-					keywords = {},
-					strings = {},
-					variables = {},
-					numbers = {},
-					booleans = {},
-					properties = {},
-					types = {},
-					operators = {},
-				},
-			})
-			if vim.g.neovide == true then
-				require("catppuccin").setup({
-					transparent_background = false,
-					background = {
-						dark = "mocha",
-					},
-					color_overrides = {
-						all = {
-							-- base = "#1E1F29",
-							base = "#151517",
-						},
-					},
-				})
-			end
-			require("catppuccin").load()
-			vim.cmd([[colorscheme catppuccin]])
-			vim.cmd([[highlight CursorLine  guibg=#2a2a41 ctermbg=darkblue]])
-		end,
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("catppuccin").setup({
+	-- 			flavour = "mocha",
+	-- 			transparent_background = true,
+	-- 			no_italic = true,
+	-- 			styles = {
+	-- 				comments = { "bold" },
+	-- 				conditionals = {},
+	-- 				loops = {},
+	-- 				functions = {},
+	-- 				keywords = {},
+	-- 				strings = {},
+	-- 				variables = {},
+	-- 				numbers = {},
+	-- 				booleans = {},
+	-- 				properties = {},
+	-- 				types = {},
+	-- 				operators = {},
+	-- 			},
+	-- 		})
+	-- 		if vim.g.neovide == true then
+	-- 			require("catppuccin").setup({
+	-- 				transparent_background = false,
+	-- 				background = {
+	-- 					dark = "mocha",
+	-- 				},
+	-- 				color_overrides = {
+	-- 					all = {
+	-- 						-- base = "#1E1F29",
+	-- 						base = "#151517",
+	-- 					},
+	-- 				},
+	-- 			})
+	-- 		end
+	-- 		require("catppuccin").load()
+	-- 		vim.cmd([[colorscheme catppuccin]])
+	-- 		vim.cmd([[highlight CursorLine  guibg=#2a2a41 ctermbg=darkblue]])
+	-- 	end,
+	-- },
 	-- {
 	-- 	"bluz71/vim-nightfly-colors",
 	-- 	name = "nightfly",
@@ -233,19 +234,19 @@ return {
 	-- 		end
 	-- 	end,
 	-- },
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	name = "rose-pine",
-	-- 	config = function()
-	-- 		require("rose-pine").setup({
-	-- 			styles = {
-	-- 				transparency = true,
-	-- 			},
-	-- 		})
-	-- 		vim.cmd("colorscheme rose-pine")
-	-- 		vim.cmd([[highlight CursorLine  guibg=#2e2d2d ctermbg=darkblue]])
-	-- 	end,
-	-- },
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function()
+			require("rose-pine").setup({
+				styles = {
+					transparency = true,
+				},
+			})
+			vim.cmd("colorscheme rose-pine")
+			vim.cmd([[highlight CursorLine  guibg=#2e2d2d ctermbg=darkblue]])
+		end,
+	},
 	-- {
 	-- 	"olimorris/onedarkpro.nvim",
 	-- 	priority = 1000, -- Ensure it loads first

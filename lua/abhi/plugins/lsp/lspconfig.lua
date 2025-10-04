@@ -9,6 +9,8 @@ return {
 	config = function()
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities.textDocument.hover.contentFormat = { "plaintext" }
 
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
