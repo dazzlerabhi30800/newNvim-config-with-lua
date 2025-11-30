@@ -10,5 +10,6 @@ else
 	-- vim.g.mapleader = " "
 	require("abhi.core")
 	require("abhi.lazy")
+	require("abhi.lsp")
 	vim.cmd("hi MatchParen guibg=NONE guifg=NONE gui=NONE")
 end

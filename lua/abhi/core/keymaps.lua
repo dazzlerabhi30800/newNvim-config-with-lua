@@ -19,15 +19,15 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
--- keymap.set("n", "<A-n>", ":tabn<CR>") --  go to next tab
--- keymap.set("n", "<A-p>", ":tabp<CR>") --  go to previous tab
+keymap.set("n", "<A-n>", ":tabn<CR>") --  go to next tab
+keymap.set("n", "<A-p>", ":tabp<CR>") --  go to previous tab
 
 
 -- Jump to previous buffer
-keymap.set('n', '<A-p>', '<cmd>bprevious<CR>', { noremap = true, silent = true })
+-- keymap.set('n', '<A-p>', '<cmd>bprevious<CR>', { noremap = true, silent = true })
 
 -- Jump to next buffer
-keymap.set('n', '<A-n>', '<cmd>bnext<CR>', { noremap = true, silent = true })
+-- keymap.set('n', '<A-n>', '<cmd>bnext<CR>', { noremap = true, silent = true })
 
 -- Close current buffer
 keymap.set('n', '<leader>c', '<cmd>bd<CR>', { noremap = true, silent = true })

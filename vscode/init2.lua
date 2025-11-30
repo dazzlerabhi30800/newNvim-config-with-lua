@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 
-
 local menuBar = {
 	sideBar = function()
 		vim.fn.VSCodeNotify("workbench.action.toggleSidebarVisibility")
@@ -75,6 +74,16 @@ local changeWidthHeight = {
 	end,
 }
 
+local errorTab = {
+	jumpToNextError = function()
+		vim.fn.VSCodeNotify("editor.action.marker.next")
+	end,
+
+	jumpToPrevError = function()
+		vim.fn.VSCodeNotify("editor.action.marker.prev")
+	end,
+}
+
 local tabs = {
 	tab1 = function()
 		vim.fn.VSCodeNotify("workbench.action.openEditorAtIndex1")
@@ -113,6 +122,9 @@ vim.keymap.set({ "n" }, "<leader>f", files.quickOpen)
 vim.keymap.set({ "n" }, "<leader>n", files.fileEntries)
 vim.keymap.set({ "n" }, "<leader>r", files.openFileExplorer)
 vim.keymap.set({ "n" }, "<leader>w", files.formatDocument)
+
+vim.keymap.set({ "n" }, "[d", errorTab.jumpToNextError)
+vim.keymap.set({ "n" }, "]d", errorTab.jumpToPrevError)
 
 vim.keymap.set({ "n" }, "<C-k>", navigation.navigationUp)
 vim.keymap.set({ "n" }, "<C-j>", navigation.navigationDown)
