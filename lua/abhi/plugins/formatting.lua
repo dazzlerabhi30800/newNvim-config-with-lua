@@ -20,6 +20,15 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},
+
+			formatters = {
+				prettier = {
+					-- force using Mason's prettier, no spaces in path
+					command = vim.fn.stdpath("data") .. "/mason/bin/prettier.cmd",
+					-- optional but safe:
+					-- prepend_args = { "--no-config" },
+				},
+			},
 			-- format_on_save = {
 			-- 	lsp_fallback = false,
 			-- 	async = false,
