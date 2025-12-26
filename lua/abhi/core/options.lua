@@ -57,7 +57,7 @@ opt.splitbelow = true
 opt.iskeyword:append("-") -- set cursor to line on insert mode
 
 -- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:ver15,r-cr:ver15,o:ver15"
--- opt.guicursor = "a:block-Cursor/lCursor"
+opt.guicursor = "a:block-Cursor/lCursor"
 -- opt.guicursor = "n-v-r:block-Cursor/lCursor,i-cr-ci-c:ver10,r-cr:ver10,o:ver10"
 -- opt.guicursor = "n-v-c:block-Cursor/lCursor,i-cr:hor10,r-cr:hor10,o:hor10"
 -- opt.guicursor = "a:hor-10/lCursor"

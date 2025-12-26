@@ -1,6 +1,8 @@
 vim.g.leader = " "
 
 local keymap = vim.keymap --for conciseness
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 --general keymaps
 
 -- keymap.set("i", "jk", "<ESC>")
@@ -13,15 +15,30 @@ keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 -- window management
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
-keymap.set("n", "<leader>sv", "<C-w>v")        -- split window vertically
-keymap.set("n", "<leader>se", "<C-w>=")      -- make split windows equal width & height
+keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
+keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+
+-- Move to previous/next tabs
+-- map("n", "<A-p>", "<Cmd>BufferPrevious<CR>", opts)
+-- map("n", "<A-n>", "<Cmd>BufferNext<CR>", opts)
+
+-- Goto buffer in position...
+map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
+map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
+map("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", opts)
+map("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", opts)
+map("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", opts)
+map("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", opts)
+map("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
+map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
+map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
+map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<A-n>", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<A-p>", ":tabp<CR>") --  go to previous tab
-
 
 -- Jump to previous buffer
 -- keymap.set('n', '<A-p>', '<cmd>bprevious<CR>', { noremap = true, silent = true })
@@ -30,7 +47,7 @@ keymap.set("n", "<A-p>", ":tabp<CR>") --  go to previous tab
 -- keymap.set('n', '<A-n>', '<cmd>bnext<CR>', { noremap = true, silent = true })
 
 -- Close current buffer
-keymap.set('n', '<leader>c', '<cmd>bd<CR>', { noremap = true, silent = true })
+keymap.set("n", "<leader>c", "<cmd>bd<CR>", { noremap = true, silent = true })
 
 -- for the moving line up and down
 vim.api.nvim_set_keymap("n", "<M-k>", ':echo "Alt + k pressed"<CR>', { noremap = true, silent = true })
@@ -127,9 +144,69 @@ vim.api.nvim_set_keymap("t", "<C-j>", "<C-\\><C-N><C-w>h", { noremap = true, sil
 -- Move to the terminal on the right of the current split
 vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-N><C-w>l", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>t', ':tabedit %<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>t", ":tabedit %<CR>", { noremap = true, silent = true })
 
+local function hex_to_rgba(hex, alpha)
+	if type(hex) ~= "string" then
+		return nil
+	end
 
+	hex = hex:gsub("#", "")
+	if #hex ~= 6 then
+		return nil
+	end
+
+	local r = tonumber(hex:sub(1, 2), 16)
+	local g = tonumber(hex:sub(3, 4), 16)
+	local b = tonumber(hex:sub(5, 6), 16)
+	alpha = alpha or 1
+
+	return string.format("rgba(%d, %d, %d, %.2f)", r, g, b, alpha)
+end
+
+local function rgba_to_hex(rgba)
+	if type(rgba) ~= "string" then
+		return nil
+	end
+
+	local r, g, b = rgba:match("rgba?%s*%(%s*(%d+)%s*,%s*(%d+)%s*,%s*(%d+)")
+	if not r then
+		return nil
+	end
+
+	return string.format("#%02x%02x%02x", tonumber(r), tonumber(g), tonumber(b))
+end
+
+function ToggleColorUnderCursor()
+	local pos = vim.api.nvim_win_get_cursor(0)
+	local line = vim.api.nvim_get_current_line()
+	local cursor_col = pos[2] + 1
+
+	-- try hex under cursor
+	local hs, he, hex = line:find("#[%da-fA-F][%da-fA-F][%da-fA-F][%da-fA-F][%da-fA-F][%da-fA-F]")
+	if hs and cursor_col >= hs and cursor_col <= he then
+		local rgba = hex_to_rgba(hex, 1)
+		if rgba then
+			vim.api.nvim_set_current_line(line:sub(1, hs - 1) .. rgba .. line:sub(he + 1))
+		end
+		return
+	end
+
+	-- try rgba(...) under cursor
+	local rs, re = line:find("rgba?%b()")
+	if rs and cursor_col >= rs and cursor_col <= re then
+		local rgba = line:sub(rs, re)
+		local new_hex = rgba_to_hex(rgba)
+		if new_hex then
+			vim.api.nvim_set_current_line(line:sub(1, rs - 1) .. new_hex .. line:sub(re + 1))
+		end
+		return
+	end
+end
+
+-- vim.keymap.set("n", "<leader>cr", ToggleColorUnderCursor, { desc = "Toggle hex/rgba" })
+
+vim.keymap.set("n", "<A-c>", ToggleColorUnderCursor, { desc = "Toggle hex/rgba" })
 
 -- keymap.set("n", "<leader>r", function()
 -- 	-- require("abhi.hsl").replaceHexWithHSL()

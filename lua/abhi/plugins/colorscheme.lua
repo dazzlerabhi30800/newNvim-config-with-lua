@@ -41,19 +41,19 @@ return {
 	-- 		require("catppuccin").setup({
 	-- 			flavour = "mocha",
 	-- 			transparent_background = true,
-	-- 			no_italic = true,
+	-- 			no_italic = false,
 	-- 			styles = {
-	-- 				comments = { "bold" },
-	-- 				conditionals = {},
+	-- 				comments = { "bold", "italic" },
+	-- 				conditionals = { "italic" },
 	-- 				loops = {},
-	-- 				functions = {},
+	-- 				functions = { "italic" },
 	-- 				keywords = {},
-	-- 				strings = {},
+	-- 				strings = { "italic" },
 	-- 				variables = {},
 	-- 				numbers = {},
 	-- 				booleans = {},
 	-- 				properties = {},
-	-- 				types = {},
+	-- 				types = { "italic" },
 	-- 				operators = {},
 	-- 			},
 	-- 		})
@@ -304,7 +304,6 @@ return {
 				dim_inactive = false,
 				transparent_mode = true,
 			})
-
 			vim.cmd("colorscheme gruvbox")
 			vim.api.nvim_create_autocmd("ColorScheme", {
 				pattern = "gruvbox",
