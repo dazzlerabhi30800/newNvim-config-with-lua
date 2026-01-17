@@ -1,62 +1,42 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	-- branch = "0.1.x",
 	branch = "master",
 	dependencies = {
 		"sharkdp/fd",
 		"nvim-lua/plenary.nvim",
+		"dharmx/telescope-media.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		{ "nvim-telescope/telescope-ui-select.nvim" },
 		"nvim-tree/nvim-web-devicons",
-		"nvim-telescope/telescope-file-browser.nvim",
+		{ "nvim-telescope/telescope-frecency.nvim" },
+		{ "nvim-telescope/telescope-file-browser.nvim", branch = "master" },
 	},
 	config = function()
 		local builtin = require("telescope.builtin")
+		-- local actions = require("telescope.actions")
+		local fb_actions = require("telescope").extensions.file_browser.actions
+
+		-- Basic keymaps
 		vim.keymap.set("n", "ff", builtin.find_files, {})
 		vim.keymap.set("n", "fg", builtin.live_grep, {})
 		vim.keymap.set("n", "fb", builtin.buffers, {})
 		vim.keymap.set("n", "fh", builtin.help_tags, {})
 
-		local status, telescope = pcall(require, "telescope")
-		if not status then
-			return
-		end
-		local actions = require("telescope.actions")
-		-- local builtin = require("telescope.builtin")
-
 		local function telescope_buffer_dir()
 			return vim.fn.expand("%:p:h")
 		end
 
-		local fb_actions = require("telescope").extensions.file_browser.actions
-		-- local action_state = require("telescope.actions.state")
-
-		require("telescope").load_extension("fzf")
-
-		telescope.setup({
+		require("telescope").setup({
 			defaults = {
+				preview = { treesitter = false },
 				file_ignore_patterns = { "node_modules", ".git" },
-				-- mappings = {
-				-- 	n = {
-				-- 		["q"] = actions.close,
-				-- 	},
-				-- 	i = {
-				-- 		["<CR>"] = function(prompt_bufnr)
-				-- 			local selection = action_state.get_selected_entry()
-				-- 			local raw_path = selection[1] -- Use the raw entry value
-				-- 			print("Selected path: " .. raw_path) -- Debug output
-				-- 			actions.close(prompt_bufnr)
-				-- 			vim.cmd("edit " .. vim.fn.fnameescape(raw_path)) -- Open the raw path
-				-- 		end,
-				-- 	},
-				-- },
 				find_command = { "rg", "--files", "--no-ignore", "--hidden", "--" },
-				-- find_command = { "fd", "--type", "f", "--hidden", "--follow" },
-				-- path_display = function(_, path)
-				-- 	return string.gsub(path, "[(]", "\\("):gsub("[)]", "\\)")
-				-- end,
 				path_display = { "truncate" },
-
-				vimgrep_arguements = {
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = { preview_width = 0.6 },
+				},
+				vimgrep_arguments = {
 					"rg",
 					"--color=never",
 					"--no-heading",
@@ -69,12 +49,11 @@ return {
 			},
 			pickers = {
 				find_files = {
-					-- Use ripgrep with proper path handling for parentheses
-					find_command = { "rg", "--files", "--glob", "!{.git/*,node_modules/*}", "--path-separator", "/" },
-					hidden = true, -- Include hidden files if needed
+					no_ignore = true,
+					find_command = { "rg", "--files", "--glob", "!{.git/*,node_modules/*}" },
+					hidden = true,
 				},
 				live_grep = {
-					-- Ensure live_grep also handles paths correctly
 					vimgrep_arguments = {
 						"rg",
 						"--color=never",
@@ -83,73 +62,77 @@ return {
 						"--line-number",
 						"--column",
 						"--smart-case",
-						"--path-separator",
-						"/",
 					},
 				},
 			},
 			extensions = {
+				fzf = {},
+				media_files = {
+					filetypes = { "png", "jpg", "jpeg", "gif", "webp" },
+					find_cmd = "rg",
+					previewer = {
+						["png"] = { "chafa", "--format=symbols", "--size=40x8", "%s" },
+						["jpg"] = { "chafa", "--format=symbols", "--size=40x8", "%s" },
+						["jpeg"] = { "chafa", "--format=symbols", "--size=40x8", "%s" },
+						["gif"] = { "chafa", "--format=symbols", "--size=40x8", "%s" },
+						["webp"] = { "chafa", "--format=symbols", "--size=40x8", "%s" },
+					},
+				},
 				file_browser = {
 					theme = "dropdown",
-					-- disables netrw and use telescope-file-browser in its place
-					hijack_netrw = true,
+					hijack_netrw = false, -- Disable to avoid window conflicts
+					previewer = false, -- No preview = no window invalidation
 					mappings = {
-						-- your custom insert mode mappings
 						["i"] = {
 							["<C-w>"] = function()
 								vim.cmd("normal vbd")
-							end,
+							end, -- Keep your word delete
 						},
 						["n"] = {
-							-- your custom normal mode mappings
-							["N"] = fb_actions.create,
-							["h"] = fb_actions.goto_parent_dir,
-							["/"] = function()
-								vim.cmd("startinsert")
-							end,
+							["N"] = fb_actions.create, -- Create file/folder
+							["R"] = fb_actions.rename, -- Rename
+							["D"] = fb_actions.remove, -- Delete
+							["M"] = fb_actions.move, -- Move (multi-select)
+							["C"] = fb_actions.copy, -- Copy
+							["h"] = fb_actions.goto_parent_dir, -- Parent dir
+							["l"] = fb_actions.open, -- Open/select
+							["-"] = fb_actions.goto_cwd, -- Go to cwd
 						},
 					},
 				},
 			},
 		})
 
-		telescope.load_extension("file_browser")
+		-- Load extensions
+		require("telescope").load_extension("fzf")
+		-- require("telescope").load_extension("media_files")
+		require("telescope").load_extension("file_browser")
+		require("telescope").load_extension("ui-select")
+		require("telescope").load_extension("frecency")
 
+		-- Your custom keymaps
 		vim.keymap.set("n", ",f", function()
-			builtin.find_files({
-				no_ignore = true,
-				hidden = true,
-			})
+			builtin.find_files({ no_ignore = true, hidden = true })
 		end)
-		vim.keymap.set("n", ",r", function()
-			builtin.live_grep()
-		end)
-		vim.keymap.set("n", "\\\\", function()
-			builtin.buffers()
-		end)
-		vim.keymap.set("n", ",t", function()
-			builtin.help_tags()
-		end)
-		vim.keymap.set("n", "<leader>;", function()
-			builtin.resume()
-		end)
-		vim.keymap.set("n", ",e", function()
-			builtin.diagnostics()
-		end)
+		vim.keymap.set("n", ",r", builtin.live_grep)
+		vim.keymap.set("n", "\\\\", builtin.buffers)
+		vim.keymap.set("n", ",t", builtin.help_tags)
+		vim.keymap.set("n", "<leader>;", builtin.resume)
+		vim.keymap.set("n", ",e", builtin.diagnostics)
+		-- vim.keymap.set("n", "<leader>fm", "<cmd>Telescope media_files<CR>")
+
+		-- File browser WITHOUT attach_mappings/custom overrides (uses global mappings)
 		vim.keymap.set("n", "s;", function()
-			telescope.extensions.file_browser.file_browser({
+			require("telescope").extensions.file_browser.file_browser({
 				path = "%:p:h",
 				cwd = telescope_buffer_dir(),
 				respect_gitignore = false,
 				hidden = true,
 				grouped = true,
-				previewer = false,
 				initial_mode = "normal",
-				layout_config = { height = 40 },
 			})
 		end)
 
-		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
 		pcall(require("telescope").load_extension, "live_grep_args")
 	end,

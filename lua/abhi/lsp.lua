@@ -15,6 +15,54 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		opts.desc = "Show LSP definition"
 		keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- show lsp definition
+		keymap.set("n", "gv", "<cmd>vsplit | Telescope lsp_definitions<CR>", opts)
+		--
+
+		opts.desc = "LSP definition (new tab)"
+		keymap.set("n", "gt", function()
+			vim.lsp.buf.definition({
+				handler = function(_, result)
+					if result and result[1] then
+						local filename = vim.uri_to_fname(result[1].uri)
+						vim.cmd("tabnew " .. vim.fn.fnameescape(filename))
+						if result[1].range and result[1].range.start then
+							vim.api.nvim_win_set_cursor(0, {
+								result[1].range.start.line + 1,
+								result[1].range.start.character,
+							})
+						end
+						vim.cmd("normal! zz")
+					end
+				end,
+			})
+		end, opts)
+
+
+		-- opts.desc = "LSP definition (new tab)"
+		-- keymap.set("n", "gT", function()
+		-- 	require("telescope.builtin").lsp_definitions({
+		-- 		attach_mappings = function(_, map)
+		-- 			map("i", "<CR>", function(prompt_bufnr)
+		-- 				local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+		-- 				local selection = picker:get_selection()
+		-- 				require("telescope.actions").close(prompt_bufnr)
+		-- 				vim.cmd("tabnew " .. vim.fn.fnameescape(selection.filename))
+		-- 				vim.api.nvim_win_set_cursor(0, { selection.lnum or 1, 0 })
+		-- 			end)
+		-- 			map("n", "<CR>", function(prompt_bufnr)
+		-- 				local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+		-- 				local selection = picker:get_selection()
+		-- 				require("telescope.actions").close(prompt_bufnr)
+		-- 				vim.cmd("tabnew " .. vim.fn.fnameescape(selection.filename))
+		-- 				vim.api.nvim_win_set_cursor(0, { selection.lnum or 1, 0 })
+		-- 			end)
+		-- 			return true
+		-- 		end,
+		-- 	})
+		-- end, opts)
+
+		opts.desc = "LSP definition (new tab)"
+		keymap.set("n", "gT", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", opts)
 
 		opts.desc = "Show LSP implementations"
 		keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations

@@ -290,7 +290,7 @@ return {
 					strings = true,
 					emphasis = true,
 					comments = true,
-					operators = false,
+					operators = true,
 					folds = true,
 				},
 				strikethrough = true,
@@ -300,7 +300,9 @@ return {
 				inverse = true, -- invert background for search, diffs, statuslines and errors
 				contrast = "", -- can be "hard", "soft" or empty string
 				palette_overrides = {},
-				overrides = {},
+				overrides = {
+					Function = { italic = true },
+				},
 				dim_inactive = false,
 				transparent_mode = true,
 			})
